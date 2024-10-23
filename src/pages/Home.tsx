@@ -1,90 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "../context/LanguageContextType";
 import { Link } from "react-router-dom";
-import logo from "../assets/Artboard 111.png";
+import logo from "../assets/logox.png";
 import { KeenSliderPlugin, useKeenSlider } from "keen-slider/react";
 
 import "keen-slider/keen-slider.min.css";
 import "../project.css";
 import BulletinCard from "../components/BulletinCard";
+import PreLoader from "../components/PreLoader";
 
-const WheelControls: KeenSliderPlugin = (slider: any) => {
-  let touchTimeout: ReturnType<typeof setTimeout>;
-  let position: { x: number; y: number };
-  let wheelActive: boolean;
-  let autoSlideInterval: ReturnType<typeof setInterval>;
-
-  function dispatch(e: WheelEvent, name: string) {
-    position.x -= e.deltaX;
-    position.y -= e.deltaY;
-    slider.container.dispatchEvent(
-      new CustomEvent(name, {
-        detail: {
-          x: position.x,
-          y: position.y,
-        },
-      })
-    );
-  }
-
-  function wheelStart(e: WheelEvent) {
-    position = {
-      x: e.pageX,
-      y: e.pageY,
-    };
-    dispatch(e, "ksDragStart");
-  }
-
-  function wheel(e: WheelEvent) {
-    dispatch(e, "ksDrag");
-  }
-
-  function wheelEnd(e: WheelEvent) {
-    dispatch(e, "ksDragEnd");
-  }
-
-  function eventWheel(e: WheelEvent) {
-    e.preventDefault();
-    if (!wheelActive) {
-      wheelStart(e);
-      wheelActive = true;
-    }
-    wheel(e);
-    clearTimeout(touchTimeout);
-    touchTimeout = setTimeout(() => {
-      wheelActive = false;
-      wheelEnd(e);
-    }, 50);
-  }
-
-  function startAutoSlide() {
-    autoSlideInterval = setInterval(() => {
-      slider.next(); // Go to the next slide
-    }, 3000); // Change slide every 3 seconds
-  }
-
-  function stopAutoSlide() {
-    clearInterval(autoSlideInterval); // Clear the interval
-  }
-
-  slider.on("created", () => {
-    slider.container.addEventListener("wheel", eventWheel, {
-      passive: false,
-    });
-    startAutoSlide(); // Start automatic sliding when the slider is created
-  });
-
-  slider.on("destroyed", () => {
-    stopAutoSlide(); // Stop automatic sliding when the slider is destroyed
-  });
-};
+// const WheelControls: KeenSliderPlugin = (slider: any) => {
+  // ... (same as your original code)
+// };
 
 const Home = () => {
   const { selectedLanguage, setSelectedLanguage, languages } = useLanguage();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false); // For language menu
+  const [isProjectOpen, setIsProjectOpen] = useState(false); // For project modal
 
-  const onClose = () => setIsOpen(false);
-  const onOpen = () => setIsOpen(true);
+  const onCloseLanguage = () => setIsLanguageOpen(false);
+  const onOpenLanguage = () => setIsLanguageOpen(true);
+
+  const onCloseProject = () => setIsProjectOpen(false);
+  const onOpenProject = () => setIsProjectOpen(true);
 
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
@@ -92,16 +30,28 @@ const Home = () => {
       rubberband: false,
       vertical: true,
     },
-    [WheelControls]
+    // [WheelControls]
   );
 
   const videoUrl =
     "https://videos.ctfassets.net/6rqe4bgsojj5/3urtuXKhJcmk7k7lTgrKxa/c38da316ad6d2825dae18706d571aa59/Roofstock_LandingVideo_102523-v3.webm";
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const toggleDropdown = () => setIsLanguageOpen(!isLanguageOpen);
+  const [loading, setLoading] = useState(true);
+
+    // Simulate loading delay
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 2500); // Adjust duration as needed
+  
+      return () => clearTimeout(timer); // Cleanup the timer on unmount
+    }, []);
 
   return (
     <section className="home_section">
+          <PreLoader/>     
+
       {/* Background video */}
       <video autoPlay muted loop className="main_video">
         <source src={videoUrl} type="video/webm" />
@@ -112,12 +62,15 @@ const Home = () => {
         <button className="language-btn" onClick={toggleDropdown}>
           {selectedLanguage} ▼
         </button>
-        {isOpen && (
+        {isLanguageOpen && (
           <ul className="language-dropdown">
             {Object.keys(languages).map((lang) => (
               <li
                 key={lang}
-                onClick={() => setSelectedLanguage(lang)}
+                onClick={() => {
+                  setSelectedLanguage(lang);
+                  onCloseLanguage(); // Close dropdown after selection
+                }}
                 className="dropdown-item"
               >
                 {lang}
@@ -135,7 +88,7 @@ const Home = () => {
         </div>
 
         <div className="main-center">
-          <button className="button-primary" onClick={onOpen}>
+          <button className="button-primary" onClick={onOpenProject}>
             <svg
               className="project_svg"
               viewBox="0 0 1024 1024"
@@ -149,8 +102,8 @@ const Home = () => {
           </button>
 
           {/* Modal for Project Slider */}
-          {isOpen && (
-            <div className="modal" onClick={onClose}>
+          {isProjectOpen && (
+            <div className="modal" onClick={onCloseProject}>
               <div
                 className="modal-content"
                 onClick={(e) => e.stopPropagation()}
@@ -158,7 +111,7 @@ const Home = () => {
                 <div className="modal-header">
                   <svg
                     className="modal_delete"
-                    onClick={onClose}
+                    onClick={onCloseProject}
                     fill="none"
                     viewBox="0 0 24 24"
                     height="1em"

@@ -14,7 +14,7 @@ const BulletinCard = () => {
   return (
     <div className="custom-accordion">
       {/* Accordion 1 */}
-      <div className="bulletin bulletin1" onClick={() => handleClick(0)}>
+      <div className="bulletin " onClick={() => handleClick(0)}>
         <div className="bulletin-span">
           {languages[selectedLanguage].blAccordionItem1}
         </div>
@@ -26,7 +26,7 @@ const BulletinCard = () => {
       </div>
 
       {/* Accordion 2 */}
-      <div className="bulletin bulletin2" onClick={() => handleClick(1)}>
+      <div className="bulletin " onClick={() => handleClick(1)}>
         <div className="bulletin-span">
           {languages[selectedLanguage].blAccordionItem2}
         </div>
@@ -39,7 +39,7 @@ const BulletinCard = () => {
 
       {/* Accordion 3 */}
       <div onClick={() => handleClick(2)} className="bulletin bulletin3">
-        <span className="bulletin-span bulletin-span1">
+        <span className="bulletin-span">
           {languages[selectedLanguage].blAccordionItem3}
         </span>
         {activeIndex === 2 && (
@@ -50,7 +50,7 @@ const BulletinCard = () => {
       </div>
 
       {/* Accordion 4 */}
-      <div className="bulletin bulletin4" onClick={() => handleClick(3)}>
+      <div className="bulletin" onClick={() => handleClick(3)}>
         <span className="bulletin-span">
           {languages[selectedLanguage].blAccordionItem4}
         </span>

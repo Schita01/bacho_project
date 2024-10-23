@@ -15,6 +15,28 @@ export default function Project() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
+  // const [ramdensDebs, setRamdensDebs] = useState();
+  // const [ramdeniTvit, setRamdeniTvit] = useState();
+  // const [anazgaurebisMigeba, setAnazgaurebisMigeba] = useState(); // 1 თვე
+  // const [result, setResult] = useState(0);
+
+  // const handleCalculation = () => {
+
+
+
+
+    // პროცენტი წელზე 8% იგულისხმება
+    // const yearlyPercentage = 8 / 100;
+    // const monthsInYear = 12;
+
+    // ერთ თვეში პროცენტი
+    // const monthlyPercentage = yearlyPercentage / monthsInYear;
+
+    // const calculation = (ramdensDebs * monthlyPercentage) * anazgaurebisMigeba;
+    
+    // setResult(calculation);
+  // };
+
   // Keen slider setup with duration and transition adjustments
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
@@ -29,6 +51,7 @@ export default function Project() {
 
   // Automatic slide transition effect
   useEffect(() => {
+    
     if (loaded && instanceRef.current) {
       const intervalId = setInterval(() => {
         if (currentSlide === 4) {
@@ -44,26 +67,28 @@ export default function Project() {
 
   // Handle button clicks to show corresponding cards and scroll the page
   const handleButtonClick = (type: string) => {
-    // Scroll the page
-    window.scrollBy({
-      top: 3200, // Scroll by 3200px
-      left: 0,
-      behavior: "smooth",
-    });
-
-    // Show the correct cards
-    // Show the correct cards
+    // Show the correct cards first
     setShowCards(true);
     setFirst(type === "first");
     setLast(type === "last");
     setSecond(type === "second");
     setFourth(type === "fourth");
+  
+    // Scroll the page after a slight delay to allow state updates to take effect
+    setTimeout(() => {
+      window.scrollBy({
+        top: 3200, // Scroll by 3200px
+        left: 0,
+        behavior: "smooth",
+      });
+    }, 100); // Delay in milliseconds (adjust as necessary)
   };
+  
 
   return (
     <section className="first_project_section">
-      <button className="custom-button" type="button">
         <Link to={"/"}>
+      <button className="custom-button" type="button">
           <div className="button-bg">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -81,9 +106,9 @@ export default function Project() {
               ></path>
             </svg>
           </div>
-        </Link>
-        <p className="button-text">Go Back</p>
+        <p className="button-text">{languages[selectedLanguage].backPage}</p>
       </button>
+        </Link>
       {/* Slider */}
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider">
@@ -160,8 +185,7 @@ export default function Project() {
           <div className="btns_overlay-container">
             <button
               onClick={() => {
-                handleButtonClick("first");
-                handleButtonClick("first");
+                handleButtonClick("first",);
               }}
               className="bulletin_overlay-btn"
             >
@@ -179,12 +203,69 @@ export default function Project() {
             >
               {languages[selectedLanguage].BulletinKey3}
             </button>
-            <button
-              onClick={() => handleButtonClick("fourth")} // New button for the fourth state
-              className="bulletin_overlay-btn"
-            >
-              {languages[selectedLanguage].BulletinKey4}
-            </button>
+          
+            {/* <div className="calculator">
+            <span className="calculate-span">{languages[selectedLanguage].caluclateText}</span>
+                <div className="calculator-container">
+                <div className="calculator_menu-conatiner">
+
+<div className="input-group">
+<input
+  type="number"
+  value={ramdensDebs}
+  onChange={(e) => setRamdensDebs(parseFloat(e.target.value))}
+  className="input"
+  name="თანხის რაოდენობა" 
+  required 
+/>
+
+  <label className="user-label">{languages[selectedLanguage].AmountMoney}</label>
+</div>
+
+<div className="input-group">
+  <input 
+    required 
+    type="number" 
+    name="თვე" 
+    autoComplete="off" 
+    min="1" 
+    className="input i-x1" 
+    value={ramdeniTvit}
+    onChange={(e) => setRamdeniTvit(parseFloat(e.target.value))}
+    />
+  <label className="user-label">{languages[selectedLanguage].month}</label>
+</div>
+
+                </div>
+                <div className="calculator_menu-conatiner">
+                <div className="input-group">
+      <input
+        required
+        name="ნაზღაურების მიღება (თვე)"
+        autoComplete="off"
+        className="input"
+        type="number" 
+        value={anazgaurebisMigeba} 
+        onChange={(e) => setAnazgaurebisMigeba(parseFloat(e.target.value))} 
+        min="1" 
+        />
+  <label className="user-label">{languages[selectedLanguage].compensation}</label>
+    </div>
+    <button
+  onClick={() => {
+    handleCalculation(); // Call the calculation function
+    handleButtonClick("fourth"); // Call the function to handle the fourth button state
+  }}
+  className="btn"
+>
+  {languages[selectedLanguage].calculation}
+</button>
+
+                </div>
+                </div>
+                </div>
+            </div>
+        <div> */}
           </div>
         </div>
       </div>
@@ -198,42 +279,44 @@ export default function Project() {
         <div className="container">
           <div className="SliceCarouselLifecycl_container">
             <p className="SliceCarouselLifecycle_eyebrow__O_r1c text-eyebrow">
-              Why Roofstock
+              GeoInvests
             </p>
             <h2 className="SliceCarouselLifecycle_headline__sIvRj text-xl1">
-              Our experience, <br /> available as a service
+              {languages[selectedLanguage].detail}
             </h2>
             <div className="SliceCarouselLifecycl_card-container">
-              {first && (
-                <>
-                  <RofsCard />
-                  <RofsCard />
-                  <RofsCard />
-                  <RofsCard />
-                  <RofsCard />
-                  <RofsCard />
-                  <RofsCard />
-                  <RofsCard />
-                </>
-              )}
-              {last && (
-                <>
-                  <RofsCard />
-                  <RofsCard />
-                </>
-              )}
-              {second && (
-                <>
-                  <RofsCard />
-                </>
-              )}
-              ,
-              {fourth && (
-                <>
-                  <RofsCard />{" "}
-                  {/* Render a single card for the fourth button */}
-                </>
-              )}
+            <div className="SliceCarouselLifecycl_card-container">
+  {first && (
+    <>
+      <RofsCard
+       detail={languages[selectedLanguage].bulleText}
+      result={""} />
+    </>
+  )}
+  {last && (
+    <>
+      <RofsCard
+       detail={languages[selectedLanguage].bulleText2}
+       result={""} />
+      
+    </>
+  )}
+  {second && (
+    <>
+      <RofsCard 
+       detail={languages[selectedLanguage].bulleText3}
+       result={""} />
+    </>
+  )}
+  {fourth && (
+    <>
+      <RofsCard
+       detail={languages[selectedLanguage].bulleText4}
+       result={""} />
+    </>
+  )}
+</div>
+
             </div>
           </div>
         </div>
