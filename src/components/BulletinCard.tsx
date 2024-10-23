@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useLanguage } from '../context/LanguageContextType'; // Ensure this is the correct import
+import { useState } from "react";
+import { useLanguage } from "../context/LanguageContextType"; // Ensure this is the correct import
 
 const BulletinCard = () => {
-  const { languages, selectedLanguage } = useLanguage();  // Correct way to get language and selected language
+  const { languages, selectedLanguage } = useLanguage(); // Correct way to get language and selected language
 
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const handleClick = (index) => {
+  const handleClick = (index: any) => {
     // If the clicked accordion is already active, set activeIndex to null to close it
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -14,7 +14,7 @@ const BulletinCard = () => {
   return (
     <div className="custom-accordion">
       {/* Accordion 1 */}
-      <div className="bulletin bulletin1"  onClick={() => handleClick(0)}>
+      <div className="bulletin bulletin1" onClick={() => handleClick(0)}>
         <div className="bulletin-span">
           {languages[selectedLanguage].blAccordionItem1}
         </div>
@@ -38,7 +38,7 @@ const BulletinCard = () => {
       </div>
 
       {/* Accordion 3 */}
-      <div  onClick={() => handleClick(2)} className="bulletin bulletin3">
+      <div onClick={() => handleClick(2)} className="bulletin bulletin3">
         <span className="bulletin-span bulletin-span1">
           {languages[selectedLanguage].blAccordionItem3}
         </span>

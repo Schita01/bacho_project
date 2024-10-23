@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import SliceCarouselLifecycl from "../components/SliceCarouselLifecycl";
 import RofsCard from "../components/RofsCard";
 import { useLanguage } from "../context/LanguageContextType"; // Import useLanguage
 import { Link } from "react-router-dom";
 
-
 export default function Project() {
-  const { selectedLanguage, setSelectedLanguage, languages } = useLanguage(); // Use the language context
+  const { selectedLanguage, languages } = useLanguage(); // Use the language context
   const [first, setFirst] = useState(false);
   const [last, setLast] = useState(false);
   const [second, setSecond] = useState(false);
@@ -16,7 +14,6 @@ export default function Project() {
   const [showCards, setShowCards] = useState(false); // Control the visibility
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
-
 
   // Keen slider setup with duration and transition adjustments
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -35,9 +32,9 @@ export default function Project() {
     if (loaded && instanceRef.current) {
       const intervalId = setInterval(() => {
         if (currentSlide === 4) {
-          instanceRef.current.moveToIdx(0); // Loop back to the first slide
+          instanceRef.current!.moveToIdx(0); // Loop back to the first slide
         } else {
-          instanceRef.current.next(); // Move to the next slide
+          instanceRef.current!.next(); // Move to the next slide
         }
       }, 5000); // Change slide every 5 seconds (adjust this as needed)
 
@@ -55,73 +52,82 @@ export default function Project() {
     });
 
     // Show the correct cards
-        // Show the correct cards
-        setShowCards(true);
-        setFirst(type === "first");
-        setLast(type === "last");
-        setSecond(type === "second");
-        setFourth(type === "fourth");
-      };
+    // Show the correct cards
+    setShowCards(true);
+    setFirst(type === "first");
+    setLast(type === "last");
+    setSecond(type === "second");
+    setFourth(type === "fourth");
+  };
 
   return (
     <section className="first_project_section">
       <button className="custom-button" type="button">
-      <Link to={"/"}>
-      <div className="button-bg" >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1024 1024"
-          height="25px"
-          width="25px"
-        >
-          <path
-            d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
-            fill="#fff"
-          ></path>
-          <path
-            d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
-            fill="#fff"
-          ></path>
-        </svg>
-      </div>
-      </Link>
-      <p className="button-text">Go Back</p>
-    </button>
+        <Link to={"/"}>
+          <div className="button-bg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1024 1024"
+              height="25px"
+              width="25px"
+            >
+              <path
+                d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+                fill="#fff"
+              ></path>
+              <path
+                d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+                fill="#fff"
+              ></path>
+            </svg>
+          </div>
+        </Link>
+        <p className="button-text">Go Back</p>
+      </button>
       {/* Slider */}
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider">
           <div className="keen-slider__slide number-x1">
-          <div className="container">
+            <div className="container">
               <div className="project-slider-text-container">
-                <span className="project-slider-span">მოგესალმებით ეს არის</span>
+                <span className="project-slider-span">
+                  მოგესალმებით ეს არის
+                </span>
                 <p className="project-slider-p">
-                  გამარჯობა ეს არის სლაიდერის ტექსტი მოცემულია აქ ყველა <br /> ის სიტყვა რაც აყწერს თვითოეულს გამომდინარე
-                  იქიდან თუ რა არის მასში
+                  გამარჯობა ეს არის სლაიდერის ტექსტი მოცემულია აქ ყველა <br />{" "}
+                  ის სიტყვა რაც აყწერს თვითოეულს გამომდინარე იქიდან თუ რა არის
+                  მასში
                 </p>
               </div>
             </div>
           </div>
           <div className="keen-slider__slide number-x2">
-          <div className="container">
+            <div className="container">
               <div className="project-slider-text-container">
-                <span className="project-slider-span">მოგესალმებით ეს არის</span>
+                <span className="project-slider-span">
+                  მოგესალმებით ეს არის
+                </span>
                 <p className="project-slider-p">
-                  გამარჯობა ეს არის სლაიდერის ტექსტი მოცემულია აქ ყველა <br /> ის სიტყვა რაც აყწერს თვითოეულს გამომდინარე
-                  იქიდან თუ რა არის მასში
+                  გამარჯობა ეს არის სლაიდერის ტექსტი მოცემულია აქ ყველა <br />{" "}
+                  ის სიტყვა რაც აყწერს თვითოეულს გამომდინარე იქიდან თუ რა არის
+                  მასში
                 </p>
               </div>
-              </div>
+            </div>
           </div>
           <div className="keen-slider__slide number-x3">
-          <div className="container">
+            <div className="container">
               <div className="project-slider-text-container">
-                <span className="project-slider-span">მოგესალმებით ეს არის</span>
+                <span className="project-slider-span">
+                  მოგესალმებით ეს არის
+                </span>
                 <p className="project-slider-p">
-                  გამარჯობა ეს არის სლაიდერის ტექსტი მოცემულია აქ ყველა <br /> ის სიტყვა რაც აყწერს თვითოეულს გამომდინარე
-                  იქიდან თუ რა არის მასში
+                  გამარჯობა ეს არის სლაიდერის ტექსტი მოცემულია აქ ყველა <br />{" "}
+                  ის სიტყვა რაც აყწერს თვითოეულს გამომდინარე იქიდან თუ რა არის
+                  მასში
                 </p>
               </div>
-              </div>
+            </div>
           </div>
         </div>
 
@@ -161,10 +167,16 @@ export default function Project() {
             >
               {languages[selectedLanguage].BulletinKey}
             </button>
-            <button onClick={() => handleButtonClick("last")} className="bulletin_overlay-btn">
+            <button
+              onClick={() => handleButtonClick("last")}
+              className="bulletin_overlay-btn"
+            >
               {languages[selectedLanguage].BulletinKey2}
             </button>
-            <button onClick={() => handleButtonClick("second")} className="bulletin_overlay-btn">
+            <button
+              onClick={() => handleButtonClick("second")}
+              className="bulletin_overlay-btn"
+            >
               {languages[selectedLanguage].BulletinKey3}
             </button>
             <button
@@ -178,10 +190,16 @@ export default function Project() {
       </div>
 
       {/* Render Cards Based on Selection */}
-      <section className={`SliceCarouselLifecycl_section ${showCards ? "slide-down" : "hidden"}`}>
+      <section
+        className={`SliceCarouselLifecycl_section ${
+          showCards ? "slide-down" : "hidden"
+        }`}
+      >
         <div className="container">
           <div className="SliceCarouselLifecycl_container">
-            <p className="SliceCarouselLifecycle_eyebrow__O_r1c text-eyebrow">Why Roofstock</p>
+            <p className="SliceCarouselLifecycle_eyebrow__O_r1c text-eyebrow">
+              Why Roofstock
+            </p>
             <h2 className="SliceCarouselLifecycle_headline__sIvRj text-xl1">
               Our experience, <br /> available as a service
             </h2>
@@ -208,10 +226,12 @@ export default function Project() {
                 <>
                   <RofsCard />
                 </>
-              )},
+              )}
+              ,
               {fourth && (
                 <>
-                  <RofsCard /> {/* Render a single card for the fourth button */}
+                  <RofsCard />{" "}
+                  {/* Render a single card for the fourth button */}
                 </>
               )}
             </div>
@@ -232,7 +252,9 @@ function Arrow({
   left?: boolean;
   onClick: (e: any) => void;
 }) {
-  const arrowClass = `arrow ${left ? "arrow--left" : "arrow--right"} ${disabled ? "arrow--disabled" : ""}`;
+  const arrowClass = `arrow ${left ? "arrow--left" : "arrow--right"} ${
+    disabled ? "arrow--disabled" : ""
+  }`;
 
   return (
     <svg
