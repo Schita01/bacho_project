@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const PreLoader = () => {
   const [text, setText] = useState("");
   const [showImg, setShowImg] = useState(true);
-
+    setText
   useEffect(() => {
     // სიმულაციურად ვაჩვენებთ ლოდერს რამდენიმე წამით
     const timer = setTimeout(() => {

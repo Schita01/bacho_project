@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLanguage } from "../context/LanguageContextType";
 import { Link } from "react-router-dom";
 import logo from "../assets/logox.png";
-import { KeenSliderPlugin, useKeenSlider } from "keen-slider/react";
+import {  useKeenSlider } from "keen-slider/react";
 
 import "keen-slider/keen-slider.min.css";
 import "../project.css";
@@ -12,6 +12,8 @@ import PreLoader from "../components/PreLoader";
 // const WheelControls: KeenSliderPlugin = (slider: any) => {
   // ... (same as your original code)
 // };
+
+
 
 const Home = () => {
   const { selectedLanguage, setSelectedLanguage, languages } = useLanguage();
@@ -33,11 +35,13 @@ const Home = () => {
     // [WheelControls]
   );
 
+  onOpenLanguage
   const videoUrl =
     "https://videos.ctfassets.net/6rqe4bgsojj5/3urtuXKhJcmk7k7lTgrKxa/c38da316ad6d2825dae18706d571aa59/Roofstock_LandingVideo_102523-v3.webm";
 
   const toggleDropdown = () => setIsLanguageOpen(!isLanguageOpen);
   const [loading, setLoading] = useState(true);
+  loading
 
     // Simulate loading delay
     useEffect(() => {
