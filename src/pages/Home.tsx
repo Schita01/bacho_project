@@ -6,25 +6,42 @@ import {  useKeenSlider } from "keen-slider/react";
 
 import "keen-slider/keen-slider.min.css";
 import "../project.css";
-import BulletinCard from "../components/BulletinCard";
-import PreLoader from "../components/PreLoader";
-
-// const WheelControls: KeenSliderPlugin = (slider: any) => {
-  // ... (same as your original code)
-// };
 
 
 
 const Home = () => {
+
+  // carousel
+
+  const [selectedItem, setSelectedItem] = useState({
+    id: 1,
+    label: 'Acquisitions',
+    content: 'Details about Acquisitions...',
+  });
+
+  // Data for each circular item
+  const items = [
+    { id: 1, label: 'Acquisitions', content: 'საბანკო გარანტიით დაცული 16% წლიური სარგებელი 3 წლის მანძილზე' },
+    { id: 2, label: 'Dispositions', content: 'საინვესტიციო მოგების მიღება ინდივიდუალური  გრაფიკით ( თვეში ერთხელ , 3 თვეში ერთხელ , 6 თვეში ერთხელ , წლის ბოლოს, წლის დასაწყისში. ) ' },
+    { id: 3, label: 'Property ', content: 'Bacho Georgian ნულოვანი გადასახადი ჩვენ გვჯერა გამჭვირვალობის - ნულოვანი საკომისიო ნიშნავს,რომ თქვენ გათვაისუფლებული ხართ ნებისმიერი სახის გადასახადისგან და 100% -ით ინახავთ თქვენს საინვესტიციო მოგებას' },
+    { id: 4, label: 'Leasing', content: '' },
+  ];
+  // carousel
+
+
   const { selectedLanguage, setSelectedLanguage, languages } = useLanguage();
   const [isLanguageOpen, setIsLanguageOpen] = useState(false); // For language menu
-  const [isProjectOpen, setIsProjectOpen] = useState(false); // For project modal
+   // Functions to handle dropdown toggle
+   const onCloseLanguage = () => setIsLanguageOpen(false);
+   const onOpenLanguage = () => setIsLanguageOpen(true);
+  onOpenLanguage
+   const toggleDropdown = () => setIsLanguageOpen(!isLanguageOpen);
+     // Function to handle language selection
+  const handleLanguageSelection = (lang: string) => {
+    setSelectedLanguage(lang);
+    onCloseLanguage(); // Close dropdown after selection
+  };
 
-  const onCloseLanguage = () => setIsLanguageOpen(false);
-  const onOpenLanguage = () => setIsLanguageOpen(true);
-
-  const onCloseProject = () => setIsProjectOpen(false);
-  const onOpenProject = () => setIsProjectOpen(true);
 
   const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
@@ -34,131 +51,102 @@ const Home = () => {
     },
     // [WheelControls]
   );
-
-  onOpenLanguage
+  sliderRef
+  
   const videoUrl =
     "https://videos.ctfassets.net/6rqe4bgsojj5/3urtuXKhJcmk7k7lTgrKxa/c38da316ad6d2825dae18706d571aa59/Roofstock_LandingVideo_102523-v3.webm";
 
-  const toggleDropdown = () => setIsLanguageOpen(!isLanguageOpen);
-  const [loading, setLoading] = useState(true);
-  loading
-
-    // Simulate loading delay
     useEffect(() => {
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, 2500); // Adjust duration as needed
-  
-      return () => clearTimeout(timer); // Cleanup the timer on unmount
+      // Scroll to the top of the page on component mount
+      window.scrollTo(0, 0);
     }, []);
 
+
   return (
-    <section className="home_section">
-          <PreLoader/>     
+    <section className="home_section ">
 
       {/* Background video */}
       <video autoPlay muted loop className="main_video">
         <source src={videoUrl} type="video/webm" />
       </video>
 
-      {/* Language menu dropdown */}
       <div className="language-menu">
-        <button className="language-btn" onClick={toggleDropdown}>
-          {selectedLanguage} ▼
-        </button>
-        {isLanguageOpen && (
-          <ul className="language-dropdown">
-            {Object.keys(languages).map((lang) => (
-              <li
-                key={lang}
-                onClick={() => {
-                  setSelectedLanguage(lang);
-                  onCloseLanguage(); // Close dropdown after selection
-                }}
-                className="dropdown-item"
-              >
-                {lang}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
-      {/* Content overlay */}
-      <div className="content_overlay">
-        <div className="main-left">
-          <img src={logo} alt="404" className="logo" />
-          <h1 className="main_title-h1">{languages[selectedLanguage].title}</h1>
-        </div>
-
-        <div className="main-center">
-          <button className="button-primary" onClick={onOpenProject}>
-            <svg
-              className="project_svg"
-              viewBox="0 0 1024 1024"
-              fill="currentColor"
-              height="1em"
-              width="1em"
+      <button className="language-btn" onClick={toggleDropdown}>
+        {selectedLanguage + "▼"} 
+      </button>
+      {isLanguageOpen && (
+        <ul className="language-dropdown">
+          {Object.keys(languages).map((lang) => (
+            <li
+              key={lang}
+              onClick={() => handleLanguageSelection(lang)}
+              className="dropdown-item"
             >
-              <path d="M280 752h80c4.4 0 8-3.6 8-8V280c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8zm192-280h80c4.4 0 8-3.6 8-8V280c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8v184c0 4.4 3.6 8 8 8zm192 72h80c4.4 0 8-3.6 8-8V280c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8v256c0 4.4 3.6 8 8 8zm216-432H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" />
-            </svg>
-            {languages[selectedLanguage].ViewProject}
-          </button>
+              {lang}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
 
-          {/* Modal for Project Slider */}
-          {isProjectOpen && (
-            <div className="modal" onClick={onCloseProject}>
-              <div
-                className="modal-content"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="modal-header">
-                  <svg
-                    className="modal_delete"
-                    onClick={onCloseProject}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    height="1em"
-                    width="1em"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M6.225 4.811a1 1 0 00-1.414 1.414L10.586 12 4.81 17.775a1 1 0 101.414 1.414L12 13.414l5.775 5.775a1 1 0 001.414-1.414L13.414 12l5.775-5.775a1 1 0 00-1.414-1.414L12 10.586 6.225 4.81z"
-                    />
-                  </svg>
-                </div>
-                <div className="modal-body">
-                  <div
-                    ref={sliderRef}
-                    className="keen-slider"
-                    style={{ height: 400 }}
-                  >
-                    <button className="number-slider-btn">
-                      <Link className="number-slider-link" to={"/first"}>
-                        {languages[selectedLanguage].openProject}
-                      </Link>
-                    </button>
-
-                    <div className="keen-slider__slide number-slide1"></div>
-                    <div className="keen-slider__slide number-slide2"></div>
-                    <div className="keen-slider__slide number-slide3"></div>
-                    <div className="keen-slider__slide number-slide4"></div>
-                    <div className="keen-slider__slide number-slide5"></div>
-                    <div className="keen-slider__slide number-slide6"></div>
-                    <div className="keen-slider__slide number-slide7"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+      {/* Language menu dropdown */}
+      
+       <div className="content_overlay">
+        <img data-aos="zoom-in" className="logo"  src={logo} alt="" />
+        <div className="content-overlay-text">
+          <h1  data-aos="fade-up" className="content-h1">geoinvest</h1>
+          <span  data-aos="fade-up" className="content-span">
+            {languages[selectedLanguage].mainText}
+          </span>
         </div>
+<button  
+   onClick={() => window.scrollBy({ top: 970, behavior: "smooth" })}
 
-        <div className="main-right">
-          <div className="bulletin_container">
-            <BulletinCard />
-          </div>
-        </div>
+ className="button">
+    <span className="button_lg">
+        <span className="button_sl"></span>
+        <span className="button_text"> {languages[selectedLanguage].moreBtn}</span>
+    </span>
+</button>
+       </div>
+
+       <div className="investing">
+          <div className="container">
+            <div className="investing-container">
+              <p data-aos="fade-right" className="SliceCarouselLifecycle_eyebrow__O_r1c text-eyebrow">GEOINVEST</p>
+              <span data-aos="fade-right" className="SliceCarouselLifecycle_headline__sIvRj text-xl1">{languages[selectedLanguage].investmentMainText}</span>
+              {/* <InfoCarousel/> */}
+              {/* info carousel */}
+
+              <div className="carousel-container">
+              {/* <Link className="carousel-next-page2" to={"/project"}>იხილეთ პროექტი</Link> */}
+      <div data-aos="zoom-in" className="center-circle">
+        {/* <h2 className="carousel-next-page">იხილეთ პროექტი</h2> */}
+        <Link className="carousel-next-page" to={"/project"}>იხილეთ პროექტი</Link>
       </div>
+      <div data-aos="zoom-in" className="circular-menu">
+        {items.map((item, index) => (
+          <div
+            key={item.id}
+            className={`menu-item item-${index + 1} ${selectedItem?.id === item.id ? 'active' : ''}`} // Compare IDs to set active state
+            onClick={() => setSelectedItem(item)}
+          >
+            {item.label}
+          </div>
+        ))}
+      </div>
+      {selectedItem && (
+        <div data-aos="fade-right" className="info-box">
+          <p  className="sircle-span">{selectedItem.content}</p>
+        </div>
+      )}
+    </div>
+
+              {/* info carousel */}
+            </div>
+          </div>
+       </div>
+
     </section>
   );
 };
