@@ -768,7 +768,18 @@ body {
     top: 103%;
   }
   
+  .language-menu {
+    left: 78%;
+  }
+}
 
+@media only screen and (max-width: 460px) { 
+  .content-h1 {
+    font-size: 55px;
+  }
+  .content-span {
+    font-size: 23px;
+}
 }
 
 @media only screen and (max-width: 370px) {
