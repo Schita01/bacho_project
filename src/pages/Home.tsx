@@ -3,11 +3,9 @@ import { useLanguage } from "../context/LanguageContextType";
 import { Link } from "react-router-dom";
 import logo from "../assets/logox.png";
 import { useKeenSlider } from "keen-slider/react";
-
 import "keen-slider/keen-slider.min.css";
-import "../project.css";
-
 const Home = () => {
+
   // Access the language context
   const { selectedLanguage, languages, setSelectedLanguage } = useLanguage();
 
@@ -68,6 +66,7 @@ const Home = () => {
     rubberband: false,
     vertical: true,
   });
+  sliderRef
 
   // Scroll to the top of the page on component mount
   useEffect(() => {
