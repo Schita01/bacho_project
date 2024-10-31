@@ -6,6 +6,7 @@ import Project from "./pages/Project";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -26,7 +27,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/project" element={<Project />} />
           </Routes>
+          <Footer/>
         </LanguageProvider>
+
     </div>
   );
 }

@@ -65,7 +65,7 @@
 
 }
 .number-x3 {
-  background-image: url(../src/assets/5y.jpg) !important;
+  background-image: url(../src/assets/6y.png) !important;
 
 }
 
@@ -81,16 +81,16 @@
 }
 
 .project-slider-span {
-  font-size: 40px;
-  color: #fff;
+  font-size: 120px;
+  color: #ffffff;
   font-weight: 400;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Black shadow with some transparency */
+  font-family: "Roboto", serif;
+  position: absolute;
+  left: 37%;
+  top: 40%;
+  z-index: 1000;
 
 }
 
-.project-slider-p {
-  font-size: 25px;
-  font-weight: 500; 
-  color: #fff;
-}
-
+/* down arrow */
