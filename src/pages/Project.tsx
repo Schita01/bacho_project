@@ -122,6 +122,16 @@ const Project = () => {
               <div className="project-slider-text-container"></div>
             </div>
           </div>
+          <div className="keen-slider__slide number-x2">
+            <div className="container">
+              <div className="project-slider-text-container"></div>
+            </div>
+          </div>
+          <div className="keen-slider__slide number-x3">
+            <div className="container">
+              <div className="project-slider-text-container"></div>
+            </div>
+          </div>
         </div>
       </div>
 
