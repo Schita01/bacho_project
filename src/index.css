@@ -1321,6 +1321,10 @@ body {
     width: 50% !important;
   }
 
+  .restaurant-span-text {
+    font-size: 20px;
+  }
+
   .restaurant-3 {
     font-size: 12px !important;
     right: -18%;
@@ -1345,7 +1349,7 @@ body {
 
 .prod2-1 {
   font-size: 11px;
-  left: -29%;
+  left: -33%;
 }
 
 .prod2-4 {
@@ -1497,7 +1501,7 @@ body {
 
 .item-2 {
   font-size: 10px;
-  left: -30% !important;
+  left: -31% !important;
 }
 
 .item-1 {
