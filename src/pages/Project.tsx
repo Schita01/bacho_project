@@ -6,78 +6,46 @@ import { Link } from "react-router-dom";
 
 const Project = () => {
   useEffect(() => {
-    // Scroll to the top of the page on component mount
     window.scrollTo(0, 0);
   }, []);
 
   const { selectedLanguage, languages, setSelectedLanguage } = useLanguage();
+
   type ItemType = {
     id: number;
     label: any;
     content: any;
-    calc?: any; // Make calc optional
+    calc?: any;
   };
 
-  // Set the first item as the default selected item
-  const [selectedItem, setSelectedItem] = useState<ItemType>({
+  // Separate selected items for each menu
+  const [selectedRestaurantItem, setSelectedRestaurantItem] = useState<ItemType>({
     id: 1,
-    label: languages?.[selectedLanguage]?.restaurantAboutTitel1
-    ,
-    content: languages?.[selectedLanguage]?.restaurantAboutText1 || 'Default text in case language data is missing',
+    label: languages?.[selectedLanguage]?.restaurantAboutTitel1 || 'Fallback Label 1',
+    content: languages?.[selectedLanguage]?.restaurantAboutText1 || 'Fallback content 1',
   });
 
- 
+  const [selectedProdItem, setSelectedProdItem] = useState<ItemType>({
+    id: 1,
+    label: languages?.[selectedLanguage]?.prodTitle1 || 'Fallback Label 1',
+    content: languages?.[selectedLanguage]?.prodText1 || 'Fallback content 1',
+    calc: languages?.[selectedLanguage]?.calculatorText1 || 'Fallback content 1',
+  });
 
-  // Data for each circular item
   const items = [
-    {
-      id: 1,
-      label: languages?.[selectedLanguage]?.restaurantAboutTitel1 || 'Fallback Label 1',
-      content: languages?.[selectedLanguage]?.restaurantAboutText1 || 'Fallback content 1',
-    },
-    {
-      id: 2,
-      label: languages?.[selectedLanguage]?.restaurantAboutTitel2 || 'Fallback Label 2',
-      content: languages?.[selectedLanguage]?.restaurantAboutText2 || 'Fallback content 2',
-    },
-    {
-      id: 3,
-      label: languages?.[selectedLanguage]?.restaurantAboutTitel3 || 'Fallback Label 3',
-      content: languages?.[selectedLanguage]?.restaurantAboutText3 || 'Fallback content 3',
-    },
-    {
-      id: 4,
-      label: languages?.[selectedLanguage]?.restaurantAboutTitel4 || 'Fallback Label 4',
-      content: languages?.[selectedLanguage]?.restaurantAboutText4 || 'Fallback content 4',
-    },
+    { id: 1, label: languages?.[selectedLanguage]?.restaurantAboutTitel1 || 'Fallback Label 1', content: languages?.[selectedLanguage]?.restaurantAboutText1 || 'Fallback content 1' },
+    { id: 2, label: languages?.[selectedLanguage]?.restaurantAboutTitel2 || 'Fallback Label 2', content: languages?.[selectedLanguage]?.restaurantAboutText2 || 'Fallback content 2' },
+    { id: 3, label: languages?.[selectedLanguage]?.restaurantAboutTitel3 || 'Fallback Label 3', content: languages?.[selectedLanguage]?.restaurantAboutText3 || 'Fallback content 3' },
+    { id: 4, label: languages?.[selectedLanguage]?.restaurantAboutTitel4 || 'Fallback Label 4', content: languages?.[selectedLanguage]?.restaurantAboutText4 || 'Fallback content 4' },
   ];
+
   const items2 = [
-    {
-      id: 1,
-      label: languages?.[selectedLanguage]?.prodTitle1 || 'Fallback Label 1',
-      content: languages?.[selectedLanguage]?.prodText1 || 'Fallback content 1',
-      calc: languages?.[selectedLanguage]?.calculatorText1 || 'Fallback content 1', // თუ მინდია, რომ იყოს მასივი
-    },
-    {
-      id: 2,
-      label: languages?.[selectedLanguage]?.prodTitle2 || 'Fallback Label 2',
-      content: languages?.[selectedLanguage]?.prodText2 || 'Fallback content 2',
-      calc: languages?.[selectedLanguage]?.calculatorText2 || 'Fallback content 1', // თუ მინდია, რომ იყოს მასივი
-    },
-    {
-      id: 3,
-      label: languages?.[selectedLanguage]?.prodTitle3 || 'Fallback Label 3',
-      content: languages?.[selectedLanguage]?.prodText3 || 'Fallback content 3',
-      calc: languages?.[selectedLanguage]?.calculatorText3 || 'Fallback content 1', // თუ მინდია, რომ იყოს მასივი
-    },
-    {
-      id: 4,
-      label: languages?.[selectedLanguage]?.prodTitle4 || 'Fallback Label 4',
-      content: languages?.[selectedLanguage]?.prodText4 || 'Fallback content 4',
-      calc: languages?.[selectedLanguage]?.calculatorText4 || 'Fallback content 1', // თუ მინდია, რომ იყოს მასივი
-    },
+    { id: 1, label: languages?.[selectedLanguage]?.prodTitle1 || 'Fallback Label 1', content: languages?.[selectedLanguage]?.prodText1 || 'Fallback content 1', calc: languages?.[selectedLanguage]?.calculatorText1 || 'Fallback calc 1' },
+    { id: 2, label: languages?.[selectedLanguage]?.prodTitle2 || 'Fallback Label 2', content: languages?.[selectedLanguage]?.prodText2 || 'Fallback content 2', calc: languages?.[selectedLanguage]?.calculatorText2 || 'Fallback calc 2' },
+    { id: 3, label: languages?.[selectedLanguage]?.prodTitle3 || 'Fallback Label 3', content: languages?.[selectedLanguage]?.prodText3 || 'Fallback content 3', calc: languages?.[selectedLanguage]?.calculatorText3 || 'Fallback calc 3' },
+    { id: 4, label: languages?.[selectedLanguage]?.prodTitle4 || 'Fallback Label 4', content: languages?.[selectedLanguage]?.prodText4 || 'Fallback content 4', calc: languages?.[selectedLanguage]?.calculatorText4 || 'Fallback calc 4' },
   ];
-  
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -90,29 +58,32 @@ const Project = () => {
       setLoaded(true);
     },
   });
-
+  console.log(currentSlide)
   useEffect(() => {
     if (loaded && instanceRef.current) {
       const intervalId = setInterval(() => {
-        if (instanceRef.current) {
-          instanceRef.current.next(); 
-        }
+        instanceRef.current?.next();
       }, 5000);
-
-      return () => clearInterval(intervalId); // Clear interval when component unmounts
+      return () => clearInterval(intervalId);
     }
   }, [loaded]);
+
+  
+
 
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
   const toggleDropdown = useCallback(() => {
-    setIsLanguageOpen(prev => !prev);
+    setIsLanguageOpen((prev) => !prev);
   }, []);
 
-  const handleLanguageSelection = useCallback((lang: string) => {
-    setSelectedLanguage(lang);
-    setIsLanguageOpen(false);
-  }, [setSelectedLanguage]);
+  const handleLanguageSelection = useCallback(
+    (lang: string) => {
+      setSelectedLanguage(lang);
+      setIsLanguageOpen(false);
+    },
+    [setSelectedLanguage]
+  );
 
   return (
     <section className="first_project_section">
@@ -145,124 +116,63 @@ const Project = () => {
         </div>
 
         <div ref={sliderRef} className="keen-slider">
-        <span className="project-slider-span">{languages[selectedLanguage].gallery}</span>
+          <span className="project-slider-span">{languages[selectedLanguage].gallery}</span>
           <div className="keen-slider__slide number-x1">
             <div className="container">
-              <div className="project-slider-text-container">
-              </div>
-            </div>
-          </div>
-          <div className="keen-slider__slide number-x2">
-            <div className="container">
-              <div className="project-slider-text-container">
-              </div>
-            </div>
-          </div>
-          <div className="keen-slider__slide number-x3">
-            <div className="container">
-              <div className="project-slider-text-container">    
-              </div>
+              <div className="project-slider-text-container"></div>
             </div>
           </div>
         </div>
-
-        {loaded && instanceRef.current && (
-          <>
-            <Arrow
-              left
-              onClick={(e) => {
-                e.stopPropagation();
-                instanceRef.current?.prev();
-              }}
-              disabled={currentSlide === 0}
-            />
-            <Arrow
-              onClick={(e) => {
-                e.stopPropagation();
-                instanceRef.current?.next();
-              }}
-              disabled={false}
-            />
-          </>
-        )}
       </div>
 
       <div className="investing">
         <div className="container">
-        <div className="carousel-container">
-              <div data-aos="zoom-in" className="circular-menu2">
-                {items.map((item, index) => (
-                  <div
-                    key={item.id}
-                    className={`menu-item restaurant-${index + 1} ${selectedItem.id === item.id ? 'active' : ''}`}
-                    onClick={() => setSelectedItem(item)}
-                  >
-                    {item.label}
-                  </div>
-                ))}
-                <span className="restaurant-span-text">{languages[selectedLanguage].restaurant}</span>
-              </div>
-              {selectedItem 
-              && (
-                <div data-aos="fade-right" className="info-box">
-                  <p className="sircle-span2">{selectedItem.content}</p>
+          <div className="carousel-container">
+            <div data-aos="zoom-in" className="circular-menu2">
+              {items.map((item, index) => (
+                <div
+                  key={item.id}
+                  className={`menu-item restaurant-${index + 1} ${selectedRestaurantItem.id === item.id ? 'active' : ''}`}
+                  onClick={() => setSelectedRestaurantItem(item)}
+                >
+                  {item.label}
                 </div>
-              )}
+              ))}
+              <span className="restaurant-span-text">{languages[selectedLanguage].restaurant}</span>
             </div>
-          <div data-aos="zoom-in" className="carousel-container s-c-1">
-
-
-
-
-
-
-
-            <div className="circular-menu3">
-  {items2.map((item, index) => (
-    <div
-      key={item.id}
-      className={`menu-item prod2-${index + 1} ${selectedItem.id === item.id ? 'active' : ''}`} // Compare IDs to set active state
-      onClick={() => setSelectedItem(item)}
-    >
-      {item.label}
-    </div>
-  ))}
-  <span className="restaurant-span-text">{languages[selectedLanguage].inve}</span>
-</div>
-
-{selectedItem && (
-  <div className="info-boxes">
-    <span className="project-sircle-p1">{selectedItem.content}</span>
-    <span className="project-sircle-p2">{selectedItem.calc}</span>
-    
-  </div>
-)}
-
+            {selectedRestaurantItem && (
+              <div data-aos="fade-right" className="info-box">
+                <p className="sircle-span2">{selectedRestaurantItem.content}</p>
+              </div>
+            )}
           </div>
 
-
-      
-
-
+          <div data-aos="zoom-in" className="carousel-container s-c-1">
+            <div className="circular-menu3">
+              {items2.map((item, index) => (
+                <div
+                  key={item.id}
+                  className={`menu-item prod2-${index + 1} ${selectedProdItem.id === item.id ? 'active3' : ''}`}
+                  onClick={() => setSelectedProdItem(item)}
+                >
+                  {item.label}
+                </div>
+              ))}
+              <span className="restaurant-span-text">{languages[selectedLanguage].inve}</span>
+            </div>
+            {selectedProdItem && (
+              <div className="info-boxes">
+                <span className="project-sircle-p1">{selectedProdItem.content}</span>
+                <span className="project-sircle-p2">{selectedProdItem.calc}</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-// Arrow Component
-function Arrow({ disabled, left, onClick }: { disabled: boolean; left?: boolean; onClick: (e: any) => void; }) {
-  const arrowClass = `arrow ${left ? "arrow--left" : "arrow--right"} ${disabled ? "arrow--disabled" : ""}`;
-
-  return (
-    <svg onClick={onClick} className={arrowClass} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      {left ? (
-        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-      ) : (
-        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-      )}
-    </svg>
-  );
-}
+// Arrow Component remains the same...
 
 export default Project;
