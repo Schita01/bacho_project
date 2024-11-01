@@ -17,7 +17,8 @@ body {
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  font-family: "ALK Rounded Mtav Med", sans-serif;
+  font-family: "Roboto", serif;
+
 }
 
 .container {
@@ -570,7 +571,7 @@ body {
 
 
 .carousel-next-page {
-  font-size: 24px;
+  font-size: 48px;
   transition: all 0.3s ease-in-out; /* Smooth transition for all changes */
   color: #fff; /* Default color */
 }
@@ -652,10 +653,10 @@ body {
 }
 
 /* Circular positioning for each item */
-.item-1 { top: -6%; font-size: 25px; width: 100%; left: 50%; color: white; transform: translate(-50%, -50%); }
-.item-2 { top: 50%; font-size: 25px; width: 50%; left: -25%; color: white; transform: translate(-50%, -50%); }
-.item-3 { top: 50%; font-size: 25px; width: 40%; right: -22%; color: white; transform: translate(50%, -50%); }
-.item-4 { bottom: 0; top: 101%; font-size: 25px; left: 50%; color: white; transform: translate(-50%, 50%); }
+.item-1 { top: -6%; font-size: 30px; width: 100%; left: 50%; color: white; transform: translate(-50%, -50%); }
+.item-2 { top: 50%; font-size: 30px; width: 50%; left: -23%; color: white; transform: translate(-50%, -50%); }
+.item-3 { top: 50%; font-size: 30px; width: 40%; right: -22%; color: white; transform: translate(50%, -50%); }
+.item-4 { bottom: 0; top: 101%; font-size: 30px; left: 50%; color: white; transform: translate(-50%, 50%); }
 
 .restaurant-1 { top: 50%; font-size: 25px; width: 100%; left: -22%; color: white; transform: translate(-50%, -50%); }
 .restaurant-2 { top: -8%; line-height: normal; font-size: 25px; width: 50%; left: 50%; color: white; transform: translate(-50%, -50%); }
@@ -722,7 +723,7 @@ body {
   position: absolute;
   left: 40%;
   width: 35% !important;
-  font-size: 20px;
+  font-size: 27px;
   transition: all 0.8s;
   padding: 0 0 0 5px;
   font-family: "Roboto", serif;
