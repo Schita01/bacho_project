@@ -574,6 +574,7 @@ body {
   font-size: 48px;
   transition: all 0.3s ease-in-out; /* Smooth transition for all changes */
   color: #fff; /* Default color */
+  text-decoration: none;
 }
 
 .carousel-next-page:hover {
@@ -875,6 +876,11 @@ body {
     top:39%;
 
   }
+  .circular-menu {
+    width: 400px;
+    height: 400px;
+    left: 35%;
+  }
 
   .circular-menu3 {
     width: 400px;
@@ -912,6 +918,32 @@ body {
   .prod2-3 {
     right: -21%;
   }
+
+  .language-menu {
+    left: 85%;
+  }
+
+
+.item-3 {
+  right: -25%;
+  top: 53%;
+}
+
+.item-2 {
+  left: -27%;
+  font-size: 30px;
+}
+
+
+
+.item-1,
+.item-3,
+.item-4{
+  font-size: 30px;
+}
+.sircle-span {
+  line-height: 28px;
+}
 }
 
 
@@ -977,41 +1009,7 @@ body {
 
 }
 @media only screen and (max-width: 1100px) {
-  .language-menu {
-    left: 85%;
-  }
-
-  /* .center-circle {
-    width: 200px;
-    height: 200px;
-  }
-   */
-  .circular-menu {
-    width: 400px;
-    height: 400px;
-    left: 35%;
-  }
   
-  /* .carousel-next-page {
-    font-size: 20px;
-    } */
-    
-    .item-3 {
-      right: -20%;
-    }
-    
-    .item-2 {
-      left: -20%;
-      font-size: 18px;
-    }
-    
-    
-    
-    .item-1,
-    .item-3,
-    .item-4{
-      font-size: 18px;
-    }
     
     /* .carousel-next-page {
       top: 47% !important;
@@ -1019,6 +1017,40 @@ body {
   
       
       
+    }
+    @media only screen and (max-width: 1140px) {
+      .circular-menu {
+        width: 320px;
+        height: 320px;
+        left: 31%;
+        top: 32%;
+      }
+      
+
+      .item-1 {
+        top: -8%;
+      }
+
+      .item-2 {
+        left: -40%;
+      }
+      
+      .item-3 {
+        right: -37%;
+        width: 65%;
+        top: 58%;
+
+      }
+
+      .sircle-span {
+        width: 98% !important;
+        font-size: 25px;
+      }
+
+      .carousel-next-page {
+        font-size: 35px;
+      }
+
     }
     @media only screen and (max-width: 1100px) {
       .s-c-1 {
@@ -1042,23 +1074,34 @@ body {
     }
     
     @media only screen and (max-width: 950px) {
+
       .circular-menu {
-        width: 320px;
-        height: 320px;
+        width: 250px;
+        height: 250px;
       }
-
-
+   
+      .carousel-next-page {
+        font-size: 28px;
+      }
+      .item-1 {
+        font-size: 28px;
+        top: -18%;
+      }
+      .item-2 {
+        font-size: 28px;
+        left: -54%;
+      }
       .item-3 {
-        right: -22%;
+        font-size: 28px;
+      }
+      .item-4 {
+        font-size: 28px;
       }
 
       .project-slider-span {
         left: 24%;
       }
-  .sircle-span {
-    width: 98% !important;
-    font-size: 20px;
-  }
+
 
 
   .about {
@@ -1103,11 +1146,11 @@ body {
   }
 
   .item-2 {
-    left: -22% !important;
+    left: -53% !important;
   }
 
   .item-3 {
-    right: -24%;
+    right: -35%;
   }
 
   .footer-container {
@@ -1123,27 +1166,31 @@ body {
 
 @media only screen and (max-width: 830px) {
 
+  .carousel-next-page {
+    font-size: 25px;
+  }
   
   .item-2 {
-    left: -30% !important;
-    font-size: 17px;
+    left: -41% !important;
+    font-size: 22px;
 
   }
 
   .item-3 {
     right: -28%;
-    font-size: 17px;
+    font-size: 22px;
     width: 50%;
 
   }
   .item-1 {
+    top: -8%;
     right: -41%;
-    font-size: 17px;
+    font-size: 22px;
 
   }
   .item-4 {
     right: -41%;
-    font-size: 17px;
+    font-size: 22px;
 
   }
 
@@ -1151,6 +1198,8 @@ body {
   .circular-menu {
     width: 230px;
     height: 230px;
+    left: 32%;
+
   }
 
 
@@ -1177,24 +1226,24 @@ body {
 
   .item-2 {
     left: -37%;
-    font-size: 17px;
+    font-size: 22px;
 
   }
 
   .item-3 {
     right: -28%;
-    font-size: 17px;
+    font-size: 22px;
     width: 50%;
 
   }
   .item-1 {
     right: -41%;
-    font-size: 17px;
+    font-size: 22px;
 
   }
   .item-4 {
     right: -41%;
-    font-size: 17px;
+    font-size: 22px;
 
   }
 
@@ -1249,8 +1298,10 @@ body {
 }
 
 .circular-menu {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
+  top: 35%;
+  left: 30% !important;
 }
 
 .carousel-next-page {
@@ -1258,11 +1309,15 @@ body {
 }
 
 .item-2 {
-  left: -50% !important;
+  left: -59% !important;
 }
 
 .item-1 {
-  top: -17%;
+  top: -20%;
+}
+.item-3 {
+  width: 81%;
+  left: 62.5%;
 }
 }
 @media only screen and (max-width: 580px) {
@@ -1288,22 +1343,22 @@ body {
   }
 
   .item-1 {
-    font-size: 12px;
-    top: -7%;
+    font-size: 16px;
+    top: -9%;
   }
 
   .item-2{
-    font-size: 12px;
-    left: -37% !important;
+    font-size: 16px;
+    left: -44% !important;
   }
 
   .item-3 {
-    font-size: 12px;
+    font-size: 16px;
     right: -30%;
   }
 
   .item-4 {
-    font-size: 12px;
+    font-size: 16px;
     top: 103%;
   }
 
@@ -1375,6 +1430,8 @@ body {
   .circular-menu {
     width: 160px;
     height: 160px;
+    top: 45%;
+    left: 30% !important;
   }
 
   .project-slider-span {
@@ -1397,7 +1454,7 @@ body {
   }
 
   .carousel-next-page {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .carousel-container {
@@ -1418,7 +1475,8 @@ body {
   }
 
   .item-1 {
-    top: -9%;
+    top: -10%;
+    width: 150% !important;
   }
 
   .item-2{
@@ -1427,6 +1485,10 @@ body {
 
   .item-3 {
     right: -28%;
+  }
+
+  .item-4 {
+    width: 140%;
   }
 
   .circular-menu2 {
@@ -1483,6 +1545,11 @@ body {
   .content-h1 {
     font-size: 55px;
   }
+
+.carousel-next-page {
+  font-size: 17px;
+}
+
   .content-span {
     font-size: 23px;
 }
@@ -1493,32 +1560,55 @@ body {
 }
 
 .circular-menu {
-  width: 135px;
-  height: 135px;
+  width: 145px;
+  height: 145px;
   left: 29% !important;
 }
 
 .item-2 {
-  font-size: 10px;
-  left: -33.7% !important;
+  font-size: 15px;
+  left: -49% !important;
+  font-weight: bold;
 }
 
 .item-1 {
-  font-size: 10px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .item-3 {
-  font-size: 10px;
-  right: -28%;
+  font-size: 15px;
+  width: 75%;
+  left: 67%;
+  font-weight: bold;
 }
 
 .item-4 {
-  font-size: 10px;
+  font-size: 15px;
   top: 103%;
+  font-weight: bold;
 }
 
 }
 
+@media only screen and (max-width: 430px) {
+  .circular-menu {
+    width: 135px;
+    height: 135px;
+  }
+
+  .carousel-next-page {
+    font-size: 15.5px;
+    font-weight: bold;
+  }
+
+  .item-2 {
+    font-size: 15px;
+    left: -52% !important;
+    font-weight: bold;
+}
+
+}
 @media only screen and (max-width: 415px) {
   
   .project-slider-span {
