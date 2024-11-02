@@ -1648,6 +1648,7 @@ body {
   .circular-menu {
     width: 120px;
     height: 120px;
+    background-color: red;
   }
 
   .carousel-next-page {
