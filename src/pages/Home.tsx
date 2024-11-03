@@ -142,27 +142,57 @@ const Home = () => {
             </span>
 
             {/* Info carousel */}
-            <div className="carousel-container">
+            <div className="container">
+
+            <div className="carousel-containers">
                     
-              <div data-aos="zoom-in" className="circular-menu">
+              {/* <div data-aos="zoom-in" className="circular-menu">
                 <Link className="carousel-next-page" to={"/project"}>
                 {languages[selectedLanguage]?.showProject}
                 </Link>
                 {items.map((item, index) => (
                   <div
-                    key={item.id}
-                    className={`menu-item item-${index + 1} ${selectedItem.id === item.id ? 'active' : ''}`}
-                    onClick={() => setSelectedItem(item)}
+                  key={item.id}
+                  className={`menu-item item-${index + 1} ${selectedItem.id === item.id ? 'active' : ''}`}
+                  onClick={() => setSelectedItem(item)}
                   >
-                    {item.label}
+                  {item.label}
                   </div>
-                ))}
-              </div>
-              {selectedItem && (
-                <div data-aos="fade-right" className="info-box">
-                  <p className="sircle-span">{selectedItem.content}</p>
-                </div>
-              )}
+                  ))}
+                  </div>
+                  {selectedItem && (
+                    <div data-aos="fade-right" className="info-box">
+                    <p className="sircle-span">{selectedItem.content}</p>
+                    </div>
+                    )} */}
+
+<div data-aos="zoom-in" className="circular-menus">
+  {items.map((item, index) => (
+    <div
+    key={item.id}
+    className={`menu-items items-${index + 1} ${selectedItem.id === item.id ? 'active' : ''}`}
+    onClick={() => setSelectedItem(item)}
+    >
+      {item.label}
+    </div>
+  ))}
+  {selectedItem && (
+  <div data-aos="fade-right" className="info-boxs">
+    <p className="sircle-spans1">{selectedItem.content}
+    </p>
+  </div>
+)}
+ <Link className="carousel-next-pages" to={"/project"}>
+    {languages[selectedLanguage]?.showProject}
+  </Link>
+  
+</div>
+
+
+
+</div>
+
+
             </div>
           </div>
         </div>
