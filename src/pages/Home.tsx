@@ -5,10 +5,22 @@ import logo from "../assets/logox.png";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import ProjectCard from "../components/ProjectCard";
+import { FaPhone } from "react-icons/fa";
+import { Modal, ModalContent, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+import FirstC from "../components/FirstC";
 const Home = () => {
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure(); // For controlling modal
+
+  const openWhatsApp = () => {
+    window.open("https://wa.me/995568821915", "_blank"); // Open WhatsApp with the phone number
+  };
+
+  
 
   // Access the language context
   const { selectedLanguage, languages, setSelectedLanguage } = useLanguage();
+  
 
   // State for selected item
   const [selectedItem, setSelectedItem] = useState({
@@ -102,6 +114,60 @@ const Home = () => {
           </ul>
         )}
       </div>
+
+      <div style={{ position: "relative" }}>
+      {/* Phone button that opens WhatsApp link */}
+      <button
+            className="whats-app"
+        onClick={openWhatsApp} // Open WhatsApp on phone button click
+        style={{
+          backgroundColor: "#007bff",
+          borderRadius: "50%",
+          width: "50px",
+          height: "50px",
+          border: "none",
+          color: "#fff",
+          fontSize: "24px",
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          cursor: "pointer",
+        }}
+      >
+        <FaPhone />
+      </button>
+
+      {/* Modal */}
+      <Modal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        style={{
+          maxWidth: "500px",
+          borderRadius: "8px",
+          boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2)",
+          overflow: "hidden",
+          display: "flex",
+          background: "#111",
+          color: "#fff",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "auto",
+        }}
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <Button color="danger" variant="light" onPress={onClose} style={{ marginRight: "10px" }}>
+                დახურვა
+              </Button>
+              <ModalFooter style={{ justifyContent: "space-between", padding: "1rem 1.5rem" }}>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+    </div>
 
       {/* Main content overlay */}
       <div className="content_overlay">
@@ -201,6 +267,7 @@ const Home = () => {
           </div>
         </div>
       </div>  
+      <FirstC/>
     </section>
   );
 };

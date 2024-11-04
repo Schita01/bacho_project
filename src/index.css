@@ -639,7 +639,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  right: 30%;
+  right: 24.5%;
   
 }
 .circular-menu3 {
@@ -651,7 +651,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;  
-  left: 16%;
+  left: 22%;
   top: 8%;
 }
 
@@ -704,7 +704,7 @@ body {
 .item-3 { top: 50%; font-size: 30px; width: 40%; right: -22%; color: white; transform: translate(50%, -50%); }
 .item-4 { bottom: 0; top: 101%; font-size: 30px; left: 50%; color: white; transform: translate(-50%, 50%); }
 
-.restaurant-1 { top: 50%; font-size: 25px; width: 100%; left: -22%; color: white; transform: translate(-50%, -50%); }
+.restaurant-1 { top: 50%; font-size: 25px; width: 100%; left: -30%; color: white; transform: translate(-50%, -50%); }
 .restaurant-2 { top: -8%; line-height: normal; font-size: 25px; width: 50%; left: 50%; color: white; transform: translate(-50%, -50%); }
 .restaurant-3 { top: 50%; font-size: 25px; width: 40%; right: -18%; color: white; transform: translate(50%, -50%); }
 .restaurant-4 { bottom: 0; top: 101%; font-size: 25px; left: 50%; color: white; transform: translate(-50%, 50%); }
@@ -714,10 +714,10 @@ body {
 .itemso-3 { top: 50%; font-size: 25px; width: 53%; right: -28%; color: white; transform: translate(50%, -50%); }
 .itemso-4 { bottom: 0; top: 101%; font-size: 25px; left: 50%; color: white; transform: translate(-50%, 50%); }
 
-.prod2-1 { top: 50%; font-size: 25px; width: 100%; left: -20%; color: white; transform: translate(-50%, -50%); }
-.prod2-2 { top: -6%; line-height: normal; font-size: 25px; width: 100%; left: 50%; color: white; transform: translate(-50%, -50%); }
-.prod2-3 { top: 50%; font-size: 25px; width: 40%; right: -17%; color: white; transform: translate(50%, -50%); }
-.prod2-4 { bottom: 0; top: 101%; font-size: 25px; left: 50%; color: white; transform: translate(-50%, 50%); }
+.prod2-1 { top: 50%; font-size: 25px; width: 100%; left: -29%; color: white; transform: translate(-50%, -50%); }
+.prod2-2 { top: -8%; line-height: normal; font-size: 25px; width: 100%; left: 50%; color: white; transform: translate(-50%, -50%); }
+.prod2-3 { top: 50%; font-size: 25px; width: 30%; right: -17%; color: white; transform: translate(50%, -50%); }
+.prod2-4 { bottom: 0; top: 103%; font-size: 25px; left: 50%; color: white; transform: translate(-50%, 50%); }
 
 
 /* Styling for info box */
@@ -1233,38 +1233,7 @@ body {
     font-size: 20px;
   }
 
-  .restaurant-3 {
-    font-size: 12px !important;
-    right: -18%;
-}
 
-.circular-menu3 {
-  width: 150px;
-  height: 150px;
-  left: 34%;
-}
-
-.prod2-2 {
-  top: -10%;
-  width: 134%;
-  font-size: 11px;
-}
-
-.prod2-3 {
-  font-size: 11px;
-  right: -24%;
-}
-
-.prod2-1 {
-  font-size: 11px;
-  left: -33%;
-}
-
-.prod2-4 {
-  width: 100%;
-  font-size: 11px;
-  top: 104%;
-}
 
 .project-sircle-p1 {
   font-size: 15px;
@@ -1545,3 +1514,94 @@ body {
 
 
 /*  */
+
+
+.whats-app {
+  background-color: "#007bff";
+  border-radius: "50%";
+  width: 50px;
+  height: 50px;
+  border:  none;
+  color: #fff;
+  font-size: 24px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.whats-app:hover {
+  transform: scale(1.1);
+}
+
+/*  */
+.exploring-planets {
+  display: flex;
+  background-color: #1c1c1c; /* dark background */
+  justify-content: space-between;
+  color: white;
+  padding: 20px;
+  width: 100%;
+  margin: auto;
+  border-radius: 8px;
+  margin-bottom: 100px;
+}
+.exploring-planets1 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  background-color: #1c1c1c; /* dark background */
+  color: white;
+  padding: 20px;
+  
+  width: 100%;
+  margin: auto;
+  border-radius: 8px;
+  margin-bottom: 150px;
+}
+
+.content {
+  width: 45%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #888;
+}
+
+.page-number, .total-pages {
+  font-weight: bold;
+}
+
+.divider {
+  margin: 0 5px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.image {
+  height: 50vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rebeccapurple;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
