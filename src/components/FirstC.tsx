@@ -2,8 +2,6 @@
 const FirstC = () => {
   return (
     <>
-    <div className="container">
-
     <div className="exploring-planets">
       <div className="content">
         <div className="header">
@@ -41,7 +39,6 @@ const FirstC = () => {
         {/* Replace this with an actual image source */}
         <img src="path-to-your-image.jpg" alt="Marble planet" />
       </div>
-    </div>
     </div>
     </>
   );
