@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logox.png";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import ProjectCard from "../components/ProjectCard";
 const Home = () => {
 
   // Access the language context
@@ -146,7 +147,7 @@ const Home = () => {
 
             <div className="carousel-containers">
                     
-              {/* <div data-aos="zoom-in" className="circular-menu">
+              <div data-aos="zoom-in" className="circular-menu">
                 <Link className="carousel-next-page" to={"/project"}>
                 {languages[selectedLanguage]?.showProject}
                 </Link>
@@ -164,7 +165,7 @@ const Home = () => {
                     <div data-aos="fade-right" className="info-box">
                     <p className="sircle-span">{selectedItem.content}</p>
                     </div>
-                    )} */}
+                    )}
 
 <div data-aos="zoom-in" className="circular-menus">
   {items.map((item, index) => (
@@ -182,9 +183,12 @@ const Home = () => {
     </p>
   </div>
 )}
- <Link className="carousel-next-pages" to={"/project"}>
+ {/* <Link className="carousel-next-pages" to={"/project"}>
     {languages[selectedLanguage]?.showProject}
   </Link>
+   */}
+
+   <ProjectCard/>
   
 </div>
 

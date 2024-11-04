@@ -29,6 +29,11 @@ const Project = () => {
     id: 1,
     label: languages?.[selectedLanguage]?.prodTitle1 || 'Fallback Label 1',
     content: languages?.[selectedLanguage]?.prodText1 || 'Fallback content 1',
+  });
+  const [selectedCalcItem, setSelectedCalcItem] = useState<ItemType>({
+    id: 1,
+    label: languages?.[selectedLanguage]?.calcTitle1 || 'Fallback Label 1',
+    content: languages?.[selectedLanguage]?.calculatorText1 || 'Fallback content 1',
     calc: languages?.[selectedLanguage]?.calculatorText1 || 'Fallback content 1',
   });
 
@@ -46,6 +51,12 @@ const Project = () => {
     { id: 4, label: languages?.[selectedLanguage]?.prodTitle4 || 'Fallback Label 4', content: languages?.[selectedLanguage]?.prodText4 || 'Fallback content 4', calc: languages?.[selectedLanguage]?.calculatorText4 || 'Fallback calc 4' },
   ];
 
+  const items3 = [
+    { id: 1, label: languages?.[selectedLanguage]?.calcTitle1, content: languages?.[selectedLanguage]?.calculatorText1 },
+    { id: 2, label: languages?.[selectedLanguage]?.calcTitle2, content: languages?.[selectedLanguage]?.calculatorText2 },
+    { id: 3, label: languages?.[selectedLanguage]?.calcTitle3, content: languages?.[selectedLanguage]?.calculatorText3 },
+    { id: 4, label: languages?.[selectedLanguage]?.calcTitle4, content: languages?.[selectedLanguage]?.calculatorText4 },
+  ];
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -137,7 +148,10 @@ const Project = () => {
 
       <div className="investing">
         <div className="container">
-          <div className="carousel-container">
+          <div className="c-t">
+          <span className="carousel-top-text">{languages[selectedLanguage].restaurant}</span>
+          </div>
+          <div className="carousel-container carousel-containers">
             <div data-aos="zoom-in" className="circular-menu2">
               {items.map((item, index) => (
                 <div
@@ -155,8 +169,33 @@ const Project = () => {
                 <p className="sircle-span2">{selectedRestaurantItem.content}</p>
               </div>
             )}
+            
+
+<div data-aos="zoom-in" className="circular-menus">
+  {items.map((item, index) => (
+    <div
+    key={item.id}
+    className={`menu-items items-${index + 1} ${selectedProdItem.id === item.id ? 'active' : ''}`}
+    onClick={() => setSelectedProdItem(item)}
+    >
+      {item.label}
+    </div>
+  ))}
+  {selectedProdItem && (
+  <div data-aos="fade-right" className="info-boxs">
+    <p className="sircle-spans1">{selectedProdItem.content}
+    </p>
+  </div>
+)}
+
+  
+</div>
+
           </div>
 
+          <div className="c-t">
+          <span className="carousel-top-text">{languages[selectedLanguage].inve}</span>
+          </div>
           <div data-aos="zoom-in" className="carousel-container s-c-1">
             <div className="circular-menu3">
               {items2.map((item, index) => (
@@ -173,9 +212,76 @@ const Project = () => {
             {selectedProdItem && (
               <div className="info-boxes">
                 <span className="project-sircle-p1">{selectedProdItem.content}</span>
-                <span className="project-sircle-p2">{selectedProdItem.calc}</span>
+                {/* <span className="project-sircle-p2">{selectedProdItem.calc}</span> */}
               </div>
             )}
+            <div data-aos="zoom-in" className="circular-menus">
+  {items2.map((item, index) => (
+    <div
+    key={item.id}
+    className={`menu-items items-${index + 1} ${selectedProdItem.id === item.id ? 'active3' : ''}`}
+    onClick={() => setSelectedProdItem(item)}
+    >
+      {item.label}
+    </div>
+  ))}
+  {selectedProdItem && (
+  <div data-aos="fade-right" className="info-boxs">
+    <p className="sircle-spans1">{selectedProdItem.content}
+    </p>
+  </div>
+)}
+  
+</div>
+{/*  */}
+
+
+          </div>
+          <div className="c-t">
+          <span className="carousel-top-text">{languages[selectedLanguage].calculator}</span>
+          </div>
+          <div className="carousel-container carousel-containers">
+            <div data-aos="zoom-in" className="circular-menu4">
+              {items3.map((item, index) => (
+                <div
+                  key={item.id}
+                  className={`menu-item itemso-${index + 1} ${setSelectedCalcItem.id === item.id ? 'active' : ''}`}
+                  onClick={() => setSelectedCalcItem(item)}
+                >
+                  {item.label}
+                </div>
+              ))}
+              <span className="restaurant-span-text">{languages[selectedLanguage].restaurant}</span>
+            </div>
+            {selectedRestaurantItem && (
+              <div data-aos="fade-right" className="info-box">
+                <p className="sircle-span3">{selectedCalcItem.content}</p>
+              </div>
+            )}
+            
+
+<div data-aos="zoom-in" className="circular-menus">
+  {items3.map((item, index) => (
+    <div
+    key={item.id}
+    className={`menu-items items-${index + 1} ${selectedProdItem.id === item.id ? 'active' : ''}`}
+    onClick={() => setSelectedProdItem(item)}
+    >
+      {item.label}
+    </div>
+  ))}
+  {selectedProdItem && (
+  <div data-aos="fade-right" className="info-boxs">
+    <p className="sircle-spans1">{selectedProdItem.content}
+    <span className="project-sircle-p2">{selectedProdItem.calc}</span> {/* Displaying calc text here */}
+
+    </p>
+  </div>
+)}
+
+  
+</div>
+
           </div>
         </div>
       </div>
