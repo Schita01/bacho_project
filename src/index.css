@@ -1280,6 +1280,9 @@ body {
 
 @media only screen and (max-width: 520px) {
 
+  .content-h1 {
+    font-size: 56px;
+  }
 
   .restaurant-span-text {
     font-size: 20px;
@@ -1320,6 +1323,19 @@ body {
   }
 
   .sircle-spans1 {
+    font-size: 20px !important;
+  }
+
+  .items-1 {
+    font-size: 20px !important;
+  }
+  .items-2 {
+    font-size: 20px !important;
+  }
+  .items-3 {
+    font-size: 20px !important;
+  }
+  .items-4 {
     font-size: 20px !important;
   }
 
@@ -1365,7 +1381,12 @@ body {
 
 
 @media only screen and (max-width: 405px) {
-.usel-next-page {
+
+  .content-h1 {
+    font-size: 45px;
+  }
+
+  .usel-next-page {
     font-size: 14px;
   }
 }

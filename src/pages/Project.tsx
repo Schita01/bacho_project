@@ -153,7 +153,7 @@ const Project = () => {
       <div className="investing">
         <div className="container">
           <div className="c-t">
-          <span className="carousel-top-text-1">{languages[selectedLanguage].restaurant}</span>
+          <span className="carousel-top-text">{languages[selectedLanguage].restaurant}</span>
           </div>
           <div className="carousel-container carousel-containers">
             <div data-aos="zoom-in" className="circular-menu2">
@@ -246,7 +246,7 @@ const Project = () => {
           </div>
           <div className="carousel-container carousel-containers">
             <div data-aos="zoom-in" className="circular-menu4">
-            {items3.map((item, index) => (
+              {items3.map((item, index) => (
         <div
           key={item.id}
           className={`menu-item itemso-${index + 1} ${selectedCalcItem?.id === item.id ? 'active' : ''}`}
