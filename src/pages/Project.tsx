@@ -9,6 +9,7 @@ import { Modal, ModalContent, ModalFooter, Button, useDisclosure } from "@nextui
 const Project = () => {
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure(); // For controlling modal
+  onOpen
 
   const openWhatsApp = () => {
     window.open("https://wa.me/995568821915", "_blank"); // Open WhatsApp with the phone number

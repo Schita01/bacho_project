@@ -11,7 +11,7 @@ import FirstC from "../components/FirstC";
 const Home = () => {
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure(); // For controlling modal
-
+  onOpen
   const openWhatsApp = () => {
     window.open("https://wa.me/995568821915", "_blank"); // Open WhatsApp with the phone number
   };
