@@ -17,6 +17,7 @@ const Project = () => {
     content: any;
     calc?: any;
   };
+  
 
   // Separate selected items for each menu
   const [selectedRestaurantItem, setSelectedRestaurantItem] = useState<ItemType>({
@@ -30,7 +31,7 @@ const Project = () => {
     label: languages?.[selectedLanguage]?.prodTitle1 || 'Fallback Label 1',
     content: languages?.[selectedLanguage]?.prodText1 || 'Fallback content 1',
   });
-  const [selectedCalcItem, setSelectedCalcItem] = useState<ItemType>({
+  const [selectedCalcItem, setSelectedCalcItem] = useState<any>({
     id: 1,
     label: languages?.[selectedLanguage]?.calcTitle1 || 'Fallback Label 1',
     content: languages?.[selectedLanguage]?.calculatorText1 || 'Fallback content 1',
@@ -57,6 +58,9 @@ const Project = () => {
     { id: 3, label: languages?.[selectedLanguage]?.calcTitle3, content: languages?.[selectedLanguage]?.calculatorText3 },
     { id: 4, label: languages?.[selectedLanguage]?.calcTitle4, content: languages?.[selectedLanguage]?.calculatorText4 },
   ];
+
+
+  
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -149,7 +153,7 @@ const Project = () => {
       <div className="investing">
         <div className="container">
           <div className="c-t">
-          <span className="carousel-top-text">{languages[selectedLanguage].restaurant}</span>
+          <span className="carousel-top-text-1">{languages[selectedLanguage].restaurant}</span>
           </div>
           <div className="carousel-container carousel-containers">
             <div data-aos="zoom-in" className="circular-menu2">
@@ -242,15 +246,15 @@ const Project = () => {
           </div>
           <div className="carousel-container carousel-containers">
             <div data-aos="zoom-in" className="circular-menu4">
-              {items3.map((item, index) => (
-                <div
-                  key={item.id}
-                  className={`menu-item itemso-${index + 1} ${setSelectedCalcItem.id === item.id ? 'active' : ''}`}
-                  onClick={() => setSelectedCalcItem(item)}
-                >
-                  {item.label}
-                </div>
-              ))}
+            {items3.map((item, index) => (
+        <div
+          key={item.id}
+          className={`menu-item itemso-${index + 1} ${selectedCalcItem?.id === item.id ? 'active' : ''}`}
+          onClick={() => setSelectedCalcItem(item)}
+        >
+          {item.label}
+        </div>
+      ))}
               <span className="restaurant-span-text">{languages[selectedLanguage].restaurant}</span>
             </div>
             {selectedRestaurantItem && (
