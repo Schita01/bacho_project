@@ -1172,9 +1172,6 @@ body {
 
 }
 @media only screen and (max-width: 780px) {
-  .project-slider-span {
-    /* left: 18%; */
-  }
 
   .restaurant-span-text {
     font-size: 40px;
@@ -1565,6 +1562,7 @@ body {
   cursor: pointer;
   transition: all 0.4s;
   cursor: pointer;
+  z-index: 100001;
 }
 .whats-app:hover {
   transform: scale(1.1);

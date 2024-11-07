@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "../context/LanguageContextType";
-import { Link } from "react-router-dom";
 import logo from "../assets/logox.png";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import ProjectCard from "../components/ProjectCard";
 import { FaPhone } from "react-icons/fa";
 import { Modal, ModalContent, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import FirstC from "../components/FirstC";
