@@ -214,9 +214,8 @@ const Home = () => {
             <div className="carousel-containers">
                     
               <div data-aos="zoom-in" className="circular-menu">
-                <Link className="carousel-next-page" to={"/project"}>
-                {languages[selectedLanguage]?.showProject}
-                </Link>
+              <div className="center-circle"></div>
+
                 {items.map((item, index) => (
                   <div
                   key={item.id}
@@ -244,30 +243,24 @@ const Home = () => {
     </div>
   ))}
   {selectedItem && (
-  <div data-aos="fade-right" className="info-boxs">
+  <div  data-aos="fade-right" className="info-boxs">
     <p className="sircle-spans1">{selectedItem.content}
     </p>
   </div>
-)}
- {/* <Link className="carousel-next-pages" to={"/project"}>
-    {languages[selectedLanguage]?.showProject}
-  </Link>
-   */}
-
-   <ProjectCard/>
-  
+)}  
 </div>
 
 
 
 </div>
+
 
 
             </div>
           </div>
         </div>
       </div>  
-      <FirstC/>
+      <FirstC restaurantText={languages[selectedLanguage]}/>
     </section>
   );
 };

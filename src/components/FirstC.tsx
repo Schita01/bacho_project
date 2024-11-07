@@ -1,45 +1,40 @@
+import { Link } from "react-router-dom";
 
-const FirstC = () => {
+const FirstC = ({restaurantText}:any) => {
   return (
     <>
     <div className="exploring-planets">
       <div className="content">
+        <div className="f-gs">
         <div className="header">
-          <span className="page-number">01</span>
+          <span className="page-number">{restaurantText?.showProject}</span>
           <span className="divider">——</span>
-          <span className="total-pages">05</span>
+          <span className="total-pages">01</span>
         </div>
-        <h1 className="title">EXPLORING PLANETS</h1>
+        <h1 className="title">{restaurantText?.restaurant}</h1>
         <p className="description">
           Let me introduce you to the marble planets with unique characteristics and features.
           The first planet has a red marble color, the second planet has a blue marble color,
           and the third planet has a yellow marble color.
         </p>
-      </div>
-      <div className="image">
-        {/* Replace this with an actual image source */}
-        <img src="path-to-your-image.jpg" alt="Marble planet" />
-      </div>
-    </div>
-    <div className="exploring-planets1">
-      <div className="content">
-        <div className="header">
-          <span className="page-number">01</span>
-          <span className="divider">——</span>
-          <span className="total-pages">05</span>
+
+
         </div>
-        <h1 className="title">EXPLORING PLANETS</h1>
-        <p className="description">
-          Let me introduce you to the marble planets with unique characteristics and features.
-          The first planet has a red marble color, the second planet has a blue marble color,
-          and the third planet has a yellow marble color.
-        </p>
+        <Link to={"/project"}>
+        <button className="cta">
+  <span>{restaurantText?.moreBtn}</span>
+  <svg width="15px" height="10px" viewBox="0 0 13 10">
+    <path d="M1,5 L11,5"></path>
+    <polyline className="z-s" points="8 1 12 5 8 9"></polyline>
+  </svg>
+</button>
+        </Link>
       </div>
       <div className="image">
-        {/* Replace this with an actual image source */}
-        <img src="path-to-your-image.jpg" alt="Marble planet" />
+        
       </div>
     </div>
+   
     </>
   );
 };

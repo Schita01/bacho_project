@@ -219,7 +219,9 @@ const Project = () => {
           <span className="carousel-top-text">{languages[selectedLanguage].restaurant}</span>
           </div>
           <div className="carousel-container carousel-containers">
+
             <div data-aos="zoom-in" className="circular-menu2">
+          <div className="center-circle1"></div>
               {items.map((item, index) => (
                 <div
                   key={item.id}
@@ -239,6 +241,7 @@ const Project = () => {
             
 
 <div data-aos="zoom-in" className="circular-menus">
+  
   {items.map((item, index) => (
     <div
     key={item.id}
@@ -265,6 +268,8 @@ const Project = () => {
           </div>
           <div data-aos="zoom-in" className="carousel-container s-c-1">
             <div className="circular-menu3">
+            <div className="center-circle1"></div>
+
               {items2.map((item, index) => (
                 <div
                   key={item.id}
@@ -309,6 +314,8 @@ const Project = () => {
           </div>
           <div className="carousel-container carousel-containers">
             <div data-aos="zoom-in" className="circular-menu4">
+            <div className="center-circle1"></div>
+
               {items3.map((item, index) => (
         <div
           key={item.id}
@@ -318,11 +325,11 @@ const Project = () => {
           {item.label}
         </div>
       ))}
-              <span className="restaurant-span-text">{languages[selectedLanguage].restaurant}</span>
+              <span className="restaurant-span-text">{selectedCalcItem.content}</span>
             </div>
             {selectedRestaurantItem && (
               <div data-aos="fade-right" className="info-box">
-                <p className="sircle-span3">{selectedCalcItem.content}</p>
+                {/* <p className="sircle-span3">{selectedCalcItem.content}</p> */}
               </div>
             )}
             
