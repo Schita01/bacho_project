@@ -820,8 +820,9 @@ body {
   width: 100%;
   max-width: 100%;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .about-span {
@@ -831,13 +832,13 @@ body {
   color: #111111;
   font-size: 50px;
   font-family: "Roboto", serif;
-  width: 60%;
+  width: 100%;
 } 
 
 .about-p {
-  font-size: 20px;
+  font-size: 35px;
   color: #111111 !important;
-  width: 30%;
+  width: 100%;
   font-family: "Roboto", serif;
 
 }
@@ -1128,6 +1129,8 @@ body {
 
   .about {
     flex-direction: column;
+    gap: 10px;
+
   }
 
   .about-span {
