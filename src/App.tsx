@@ -16,9 +16,6 @@ function App() {
     });
   }, []);
 
-  // Simulate loading delay
-
-
   return (
     <div className="wrapper"> 
         <LanguageProvider>

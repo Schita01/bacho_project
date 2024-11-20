@@ -24,7 +24,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       investTitle1: "Premium Investment",
       investTitle2: "Safety",
       investTitle3: "Guaranteed Profit",
-      investTitle4: "Premium Service",
+      investTitle4: "Premium Conditions",
       aboutInvestmentText1: "Invest in high-end commercial real estate and turnkey businesses at 20x market value",
       aboutInvestmentText2: "100% protected capital secured in expensive real estate, the value of which increases year by year",
       aboutInvestmentText3: "Guaranteed investment profit, which is protected by the bank guarantee of the largest bank of Georgia.",
@@ -61,6 +61,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       inve:"investment",
       showProject: "Project",
       calculator:"Calculation",
+      invtest:"About the Investment Project",
     },
     GE: {
       
@@ -72,7 +73,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
        investTitle1: "პრემიუმ ინვესტიცია",
       investTitle2: "უსაფრთხოება",
       investTitle3: "გარანტირებული მოგება",
-      investTitle4: "პრემიალური სერვისი",
+      investTitle4: "პრემიალური პირობები",
       aboutInvestmentText1: "ინვესტირება მაღალი კლასის კომერციულ უძრავ ქონებასა  და მზა ბიზნესში საბაზრო ღირებულებაზე 20-ჯერ დაბალ ფასად",
       aboutInvestmentText2: "ძვირადღირებულ უძრავ ქონებაში გამყარებული 100% დაცული კაპიტალი  რომლის ღირებულებაც  წლიდანწლამდე იზრდება ",
       aboutInvestmentText3: "გარანტირებული საინვესტიციო მოგება ,რომელიც საქართველოს ყველაზე მსხვილი ბანკის საბანკო გარანტიით არის დაცული .",
@@ -110,7 +111,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       inve:"ინვესტიცია",
       showProject: "პროექტი",
       calculator:"კალკულაცია",
-
+      invtest:"საინვესტიციო პროექტის შესახებ",
+      
     },
     RU: {
       
@@ -159,7 +161,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       inve:"инвестиции",
       showProject: "Проект",
       calculator:"расчет",
-
+      invtest:"О инвестиционном проекте",
+      
     },
   };
   
