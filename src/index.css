@@ -76,6 +76,10 @@ body {
   
 }
 
+.text-eyebrow {
+  font-size: 20px !important;
+}
+
 
 .content-h1 {
   font-size: 127px;
@@ -512,7 +516,7 @@ body {
 .carousel-top-text {
   font-size: 46px;
   color: black;
-  margin-top: 25px;
+  margin-top: 40px;
   font-weight: 400;
   
 }
@@ -1156,6 +1160,10 @@ body {
   }
 
 
+  .content {
+    align-items: center !important;
+  }
+
   .footer-container {
     display: flex;
     flex-direction: column;
@@ -1657,6 +1665,7 @@ body {
   background-color: white;
   border-radius: 25px;
   color: #234567;
+  font-size: 20px;
 }
 
 .cta:hover {

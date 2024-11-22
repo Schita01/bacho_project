@@ -62,6 +62,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       showProject: "Project",
       calculator:"Calculation",
       invtest:"About the Investment Project",
+      ive1:"Investment Terms",
     },
     GE: {
       
@@ -89,7 +90,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       restaurantAboutTitel2: "საუკეთესო ადგილმდებარეობა",
       restaurantAboutTitel3: "25 წლიანი მენეჯმენტი",
       restaurantAboutTitel4: "მომგებიანი ბიზნეს კონცეფცია",
-      restaurnat: "რესტორანი",
+      restaurnat: "საინვესტიციო პროექტის შესახებ",
       gallery: "გალერეა",
       restaurant: "რესტორანი",
       prodTitle1: "ინვესტირება ",
@@ -112,6 +113,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       showProject: "პროექტი",
       calculator:"კალკულაცია",
       invtest:"საინვესტიციო პროექტის შესახებ",
+      ive1:"საინვესტიციო პირობები",
       
     },
     RU: {
@@ -141,7 +143,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       restaurantAboutTitel3: "25 лет управления",
       restaurantAboutTitel4: "Выгодная бизнес-концепция",
       gallery: "Галерея",
-      restaurant: "Ресторан",
+      restaurant: "О инвестиционном проекте",
       prodTitle1: "Инвестирование",
       prodTitle2: "100% защищенный капитал",
       prodTitle3: "100% защищенная прибыль",
@@ -162,6 +164,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       showProject: "Проект",
       calculator:"расчет",
       invtest:"О инвестиционном проекте",
+      ive1:"Условия инвестирования",
       
     },
   };

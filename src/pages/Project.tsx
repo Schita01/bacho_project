@@ -216,7 +216,7 @@ const Project = () => {
       <div className="investing">
         <div className="container">
           <div className="c-t">
-          <span className="carousel-top-text">{languages[selectedLanguage].restaurant}</span>
+          <span className="carousel-top-text">{languages[selectedLanguage].invtest}</span>
           </div>
           <div className="carousel-container carousel-containers">
 
@@ -264,7 +264,7 @@ const Project = () => {
           </div>
 
           <div className="c-t">
-          <span className="carousel-top-text">{languages[selectedLanguage].inve}</span>
+          <span className="carousel-top-text">{languages[selectedLanguage].ive1}</span>
           </div>
           <div data-aos="zoom-in" className="carousel-container s-c-1">
             <div className="circular-menu3">
