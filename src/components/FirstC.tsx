@@ -12,6 +12,7 @@ const FirstC = ({restaurantText}:any) => {
           <span className="total-pages">01</span>
         </div>
         <h1 className="title">{restaurantText?.restaurant}</h1>
+        <h3 className="res-t">{restaurantText?.res}</h3>
         <p className="description">
           Let me introduce you to the marble planets with unique characteristics and features.
           The first planet has a red marble color, the second planet has a blue marble color,

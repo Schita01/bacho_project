@@ -210,6 +210,31 @@ const Project = () => {
               <div className="project-slider-text-container"></div>
             </div>
           </div>
+          <div className="keen-slider__slide number-x4">
+            <div className="container">
+              <div className="project-slider-text-container"></div>
+            </div>
+          </div>
+          <div className="keen-slider__slide number-x5">
+            <div className="container">
+              <div className="project-slider-text-container"></div>
+            </div>
+          </div>
+          <div className="keen-slider__slide number-x6">
+            <div className="container">
+              <div className="project-slider-text-container"></div>
+            </div>
+          </div>
+          <div className="keen-slider__slide number-x7">
+            <div className="container">
+              <div className="project-slider-text-container"></div>
+            </div>
+          </div>
+          <div className="keen-slider__slide number-x8">
+            <div className="container">
+              <div className="project-slider-text-container"></div>
+            </div>
+          </div>
         </div>
       </div>
 

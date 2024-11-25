@@ -914,8 +914,23 @@ body {
 
 }
 .number-x3 {
-  background-image: url(../src/assets/6y.png) !important;
+  background-image: url(../src/assets/sc1.jpg) !important;
+}
+.number-x4 {
+  background-image: url(../src/assets/sc2.jpg) !important;
+}
+.number-x5 {
+  background-image: url(../src/assets/sc3.jpg) !important;
+}
+.number-x6 {
+  background-image: url(../src/assets/sc4.jpg) !important;
 
+}
+.number-x7 {
+  background-image: url(../src/assets/sc5.jpg) !important;
+}
+.number-x8 {
+  background-image: url(../src/assets/sc6.jpg) !important;
 }
 
 
@@ -1105,6 +1120,10 @@ body {
   .image {
     width: 100% !important;
     height: 60vh !important;
+  }
+
+  .res-t {
+    text-align: center;
   }
     
   .header {
@@ -1636,7 +1655,7 @@ body {
 
 .image {
   height: 88vh;
-  width: 70%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1645,6 +1664,14 @@ body {
   object-fit: cover;
   background-repeat: no-repeat;
   
+}
+
+
+.res-t {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 10px;
+
 }
 
 .image img {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "../context/LanguageContextType";
 import logo from "../assets/logox.png";
+import videoUrl from "../assets/Roofstock_LandingVideo_102523-v3 (2).webm";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { FaPhone } from "react-icons/fa";
@@ -84,7 +85,7 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const videoUrl = "https://videos.ctfassets.net/6rqe4bgsojj5/3urtuXKhJcmk7k7lTgrKxa/c38da316ad6d2825dae18706d571aa59/Roofstock_LandingVideo_102523-v3.webm";
+  // const videoUrl = "https://videos.ctfassets.net/6rqe4bgsojj5/3urtuXKhJcmk7k7lTgrKxa/c38da316ad6d2825dae18706d571aa59/Roofstock_LandingVideo_102523-v3.webm";
 
   return (
     <section className="home_section ">
@@ -248,12 +249,7 @@ const Home = () => {
 )}  
 </div>
 
-
-
 </div>
-
-
-
             </div>
           </div>
         </div>

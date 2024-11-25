@@ -43,7 +43,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       gallery: "Gallery",
       restaurant: "Restaurant",
       prodTitle1: "Investing",
-      prodTitle2: "",
+      prodTitle2: "100% secured capital",
       prodTitle3: "100% Protected Profit",
       prodTitle4: "0% Tax",
       prodText1: "The investment cost of the restaurant is $1,500,000. The company's business model offers you the best opportunity to invest at an exceptionally low price, unparalleled in Georgia's real estate investment market. The minimum investment starts from $37,500, which includes a 2.5% share in the restaurant. You can invest in any share amount you desire.",
@@ -63,6 +63,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       calculator:"Calculation",
       invtest:"About the Investment Project",
       ive1:"Investment Terms",
+      res:"High-class investment commercial real estate",
     },
     GE: {
       
@@ -114,6 +115,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       calculator:"კალკულაცია",
       invtest:"საინვესტიციო პროექტის შესახებ",
       ive1:"საინვესტიციო პირობები",
+      res:"მაღალი კლასის  საინვესტიციო კომერციული უძრავი ქონება",
       
     },
     RU: {
@@ -165,6 +167,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       calculator:"расчет",
       invtest:"О инвестиционном проекте",
       ive1:"Условия инвестирования",
+      res:"Высококлассная инвестиционная коммерческая недвижимость",
       
     },
   };
