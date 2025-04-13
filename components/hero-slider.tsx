@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect, useCallback, useRef } from "react"
 import { ChevronLeft, ChevronRight, Leaf, Phone } from "lucide-react"
 import Image from "next/image"
@@ -13,6 +15,10 @@ export default function HeroSlider() {
   const [direction, setDirection] = useState("next")
   const [scrollY, setScrollY] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  // Add these new state variables after the existing useState declarations
+  const [touchStart, setTouchStart] = useState<number | null>(null)
+  const [touchEnd, setTouchEnd] = useState<number | null>(null)
 
   // Define slides with translation keys
   const slides = [
@@ -93,8 +99,42 @@ export default function HeroSlider() {
     })
   }
 
+  // Add these new functions after the existing functions but before the return statement
+  // Handle touch start event
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX)
+    setTouchEnd(null)
+  }
+
+  // Handle touch move event
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  // Handle touch end event
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > 50
+    const isRightSwipe = distance < -50
+
+    if (isLeftSwipe) {
+      nextSlide()
+    } else if (isRightSwipe) {
+      prevSlide()
+    }
+  }
+
   return (
-    <div ref={containerRef} className="relative w-full h-screen overflow-hidden bg-black" dir={dir()}>
+    <div
+      ref={containerRef}
+      className="relative w-full h-screen overflow-hidden bg-black"
+      dir={dir()}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Add MenuButton component */}
       <MenuButton />
 
@@ -118,12 +158,12 @@ export default function HeroSlider() {
         <Leaf className="w-10 h-10 text-amber-500" />
       </div>
 
-      <div className="absolute top-8 right-8 z-30">
+      <div className="fixed top-8 right-8 z-50">
         <a
           href="https://wa.me/599236464"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center w-12 h-12 rounded-full bg-green-600 text-white hover:bg-green-700 transition-colors"
+          className="flex items-center justify-center w-12 h-12 rounded-full bg-green-600 text-white hover:bg-green-700 transition-colors shadow-lg"
           aria-label="Call us on WhatsApp"
         >
           <Phone className="w-5 h-5" />
@@ -180,7 +220,7 @@ export default function HeroSlider() {
               <h3 className="text-amber-500 tracking-widest text-sm md:text-base mb-4 opacity-0 animate-fadeIn">
                 {t(slide.subtitleKey)}
               </h3>
-              <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-light mb-8 opacity-0 animate-slideUp">
+              <h1 className="text-white text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-light mb-8 opacity-0 animate-slideUp">
                 {t(slide.titleKey)}
               </h1>
             </div>
@@ -195,7 +235,19 @@ export default function HeroSlider() {
                   .split("\n")
                   .map((line, i) => (
                     <p key={i} className="mb-0">
-                      {line}
+                      {line.split(". ").map((sentence, j) => {
+                        if (!sentence.trim()) return null
+                        return (
+                          <span key={j} className="inline-block mb-1">
+                            <span className="text-amber-500 mr-1">•</span>
+                            <span className="text-white hover:text-amber-500 transition-colors">
+                              {sentence}
+                              {j < line.split(". ").length - 1 && sentence.trim() ? "." : ""}
+                            </span>
+                            {j < line.split(". ").length - 1 && sentence.trim() && <span className="mr-2"></span>}
+                          </span>
+                        )
+                      })}
                     </p>
                   ))}
               </div>
@@ -220,4 +272,3 @@ export default function HeroSlider() {
     </div>
   )
 }
-

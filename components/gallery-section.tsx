@@ -11,6 +11,24 @@ export default function GallerySection() {
 
   const galleryImages = [
     {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-k9VANxVKwBHh3N1KjVuzpowOprgmp4.png",
+      alt: "Luxury hotel room with city night view",
+      titleKey: "luxuryRoom",
+      descriptionKey: "luxuryRoomDesc",
+    },
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-0NAUTQHutVpoL3f3SMpejPwlptdoeH.png",
+      alt: "Elegant hotel room with wooden ceiling and ambient lighting",
+      titleKey: "elegantRoom",
+      descriptionKey: "elegantRoomDesc",
+    },
+    {
+      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-67Tz9P22no4StSUPR7NLIWV2Thjj9O.png",
+      alt: "Contemporary Asian-inspired hotel room with plants",
+      titleKey: "asianRoom",
+      descriptionKey: "asianRoomDesc",
+    },
+    {
       src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-iFRPCQt1aL0kFO9YF7kE5MJqkKTm4c.png",
       alt: "Modern architectural building with wavy balconies",
       titleKey: "distinctiveArchitecture",
@@ -46,7 +64,7 @@ export default function GallerySection() {
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}
@@ -72,7 +90,7 @@ export default function GallerySection() {
                   alt={image.alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </motion.div>
 
@@ -98,4 +116,3 @@ export default function GallerySection() {
     </section>
   )
 }
-

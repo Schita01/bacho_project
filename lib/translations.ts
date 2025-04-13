@@ -51,6 +51,14 @@ export type TranslationKey =
   | "aboutProjectDesc1"
   | "aboutProjectDesc2"
 
+  // FAQ section
+  | "faq"
+  | "frequentlyAskedQuestions"
+  | "generalQuestions"
+  | "investmentFinancials"
+  | "legalOwnership"
+  | "bookingContact"
+
   // Footer
   | "email"
   | "phone"
@@ -113,6 +121,14 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "For the first time in Georgia, the real estate investment company Geoinvest presents the United Nations and European Union award-winning project, which is an exclusive 5* premium-class investment hotel located in the most expensive and tourist-heavy area of Tbilisi – Old Tbilisi.",
     aboutProjectDesc2:
       "The hotel comprises 70 premium-class rooms spread across 8 floors. Its key features include the highest construction quality with international recognition, exclusive infrastructure, luxurious and expensive rooms, ultra-modern technologies, and premium-class services and amenities. This project is unmatched throughout the Caucasus region.",
+
+    // FAQ section
+    faq: "FAQ",
+    frequentlyAskedQuestions: "Frequently Asked Questions",
+    generalQuestions: "General Questions",
+    investmentFinancials: "Investment & Financials",
+    legalOwnership: "Legal & Ownership",
+    bookingContact: "Booking & Contact",
 
     // Footer
     email: "geoinvests.com@gmail.com",
@@ -177,6 +193,14 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     aboutProjectDesc2:
       "Отель включает 70 номеров премиум-класса на 8 этажах. Его ключевые особенности включают высочайшее качество строительства с международным признанием, эксклюзивную инфраструктуру, роскошные и дорогие номера, ультрасовременные технологии и услуги и удобства премиум-класса. Этот проект не имеет аналогов во всем Кавказском регионе.",
 
+    // FAQ section
+    faq: "ЧАВО",
+    frequentlyAskedQuestions: "Часто Задаваемые Вопросы",
+    generalQuestions: "Общие Вопросы",
+    investmentFinancials: "Инвестиции и Финансы",
+    legalOwnership: "Юридические Вопросы и Право Собственности",
+    bookingContact: "Бронирование и Контакты",
+
     // Footer
     email: "geoinvests.com@gmail.com",
     phone: "+995 599236464",
@@ -238,6 +262,14 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
       "لأول مرة في جورجيا، تقدم شركة الاستثمار العقاري Geoinvest المشروع الحائز على جوائز الأمم المتحدة والاتحاد الأوروبي، وهو فندق استثماري حصري من فئة 5 نجوم يقع في أغلى وأكثر المناطق السياحية في تبليسي - تبليسي القديمة.",
     aboutProjectDesc2:
       "يضم الفندق 70 غرفة من الدرجة الممتازة موزعة على 8 طوابق. تشمل ميزاته الرئيسية أعلى جودة بناء معترف بها دوليًا، وبنية تحتية حصرية، وغرف فاخرة وباهظة الثمن، وتقنيات فائقة الحداثة، وخدمات ووسائل راحة من الدرجة الممتازة. هذا المشروع لا مثيل له في جميع أنحاء منطقة القوقاز.",
+
+    // FAQ section
+    faq: "الأسئلة الشائعة",
+    frequentlyAskedQuestions: "الأسئلة المتكررة",
+    generalQuestions: "أسئلة عامة",
+    investmentFinancials: "الاستثمار والأمور المالية",
+    legalOwnership: "الملكية القانونية",
+    bookingContact: "الحجز والاتصال",
 
     // Footer
     email: "geoinvests.com@gmail.com",
@@ -302,6 +334,14 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     aboutProjectDesc2:
       "სასტუმრო შედგება 70 პრემიუმ კლასის ოთახისგან, განაწილებული 8 სართულზე. მისი ძირითადი მახასიათებლები მოიცავს უმაღლესი ხარისხის მშენებლობას საერთაშორისო აღიარებით, ექსკლუზიურ ინფრასტრუქტურას, ლუქს და ძვირადღირებულ ოთახებს, ულტრათანამედროვე ტექნოლოგიებს და პრემიუმ კლასის სერვისებსა და კომფორტს. ეს პროექტი უნიკალურია მთელს კავკასიის რეგიონში.",
 
+    // FAQ section
+    faq: "ხშირად დასმული კითხვები",
+    frequentlyAskedQuestions: "ხშირად დასმული კითხვები",
+    generalQuestions: "ზოგადი კითხვები",
+    investmentFinancials: "ინვესტიცია და ფინანსები",
+    legalOwnership: "იურიდიული საკითხები და საკუთრება",
+    bookingContact: "დაჯავშნა და კონტაქტი",
+
     // Footer
     email: "geoinvests.com@gmail.com",
     phone: "+995 599236464",
@@ -309,4 +349,3 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     allRightsReserved: "ყველა უფლება დაცულია.",
   },
 }
-

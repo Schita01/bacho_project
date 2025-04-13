@@ -2,6 +2,7 @@ import HeroSlider from "@/components/hero-slider"
 import ServicesSection from "@/components/services-section"
 import GallerySection from "@/components/gallery-section"
 import CTASection from "@/components/cta-section"
+import FAQSection from "@/components/faq-section"
 import Footer from "@/components/footer"
 
 export default function Home() {
@@ -11,8 +12,8 @@ export default function Home() {
       <ServicesSection />
       <GallerySection />
       <CTASection />
+      <FAQSection />
       <Footer />
     </main>
   )
 }
-
