@@ -58,6 +58,31 @@ export type TranslationKey =
   | "investmentFinancials"
   | "legalOwnership"
   | "bookingContact"
+  // FAQ Questions
+  | "whatIsVerticalCapital"
+  | "whatIsVerticalCapitalAnswer"
+  | "whoManagesHotel"
+  | "whoManagesHotelAnswer"
+  | "benefitsOfInvesting"
+  | "benefitsOfInvestingAnswer"
+  | "investmentCost"
+  | "investmentCostAnswer"
+  | "howToReceiveReturns"
+  | "howToReceiveReturnsAnswer"
+  | "isInvestmentSecured"
+  | "isInvestmentSecuredAnswer"
+  | "canSellBeforeFiveYears"
+  | "canSellBeforeFiveYearsAnswer"
+  | "legalOwnershipQuestion"
+  | "legalOwnershipAnswer"
+  | "taxesAndFees"
+  | "taxesAndFeesAnswer"
+  | "afterFiveYears"
+  | "afterFiveYearsAnswer"
+  | "howToBook"
+  | "howToBookAnswer"
+  | "canVisitBeforeInvesting"
+  | "canVisitBeforeInvestingAnswer"
 
   // Footer
   | "email"
@@ -130,6 +155,40 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     legalOwnership: "Legal & Ownership",
     bookingContact: "Booking & Contact",
 
+    // FAQ Questions & Answers
+    whatIsVerticalCapital: "What is The Vertical Capital?",
+    whatIsVerticalCapitalAnswer:
+      "The Vertical Capital is a real estate investment company offering a unique opportunity to own a luxury hotel room in a 5-star hotel in Old Tbilisi, with guaranteed rental income.",
+    whoManagesHotel: "Who manages the hotel and the investment?",
+    whoManagesHotelAnswer:
+      "The hotel is managed under international hospitality standards, ensuring hassle-free ownership for investors.",
+    benefitsOfInvesting: "What are the benefits of investing in a hotel room?",
+    benefitsOfInvestingAnswer:
+      "• Guaranteed 10% ROI per year ($15,000 on a $150,000 investment) • Fixed monthly payments secured by a top Georgian bank • A buyback option after 5 years • No operational involvement, taxes, or extra fees",
+    investmentCost: "How much does it cost to invest?",
+    investmentCostAnswer: "Each hotel room costs $150,000, with a guaranteed 10% annual ROI.",
+    howToReceiveReturns: "How do I receive my returns?",
+    howToReceiveReturnsAnswer: "Investors receive fixed monthly payments directly from the hotel's earnings.",
+    isInvestmentSecured: "Is my investment secured?",
+    isInvestmentSecuredAnswer:
+      "Yes, payments are guaranteed by Georgia's largest bank, and investors have legal property ownership.",
+    canSellBeforeFiveYears: "Can I sell my investment before 5 years?",
+    canSellBeforeFiveYearsAnswer:
+      "Yes, you can resell your hotel room at any time, or use the buyback option after 5 years.",
+    legalOwnershipQuestion: "Will I own the hotel room legally?",
+    legalOwnershipAnswer:
+      "Yes, after investing, you will receive an ownership certificate registered with the Ministry of Justice of Georgia.",
+    taxesAndFees: "Do I need to pay any taxes or fees?",
+    taxesAndFeesAnswer: "No, investors are exempt from operational fees, maintenance costs, and property taxes.",
+    afterFiveYears: "What happens after 5 years?",
+    afterFiveYearsAnswer:
+      "• You can continue receiving rental income • Sell your hotel room to a new investor • Use the buyback option to get your investment back",
+    howToBook: "How can I book a hotel room investment?",
+    howToBookAnswer:
+      "• To reserve a unit, please contact us: • 📩 Email: geoinvests.com@gmail.com • 📞 Phone: +995 599 236 464",
+    canVisitBeforeInvesting: "Can I visit the hotel before investing?",
+    canVisitBeforeInvestingAnswer: "Yes! We welcome investors to visit the property in Old Tbilisi.",
+
     // Footer
     email: "geoinvests.com@gmail.com",
     phone: "+995 599236464",
@@ -201,6 +260,41 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     legalOwnership: "Юридические Вопросы и Право Собственности",
     bookingContact: "Бронирование и Контакты",
 
+    // FAQ Questions & Answers
+    whatIsVerticalCapital: "Что такое The Vertical Capital?",
+    whatIsVerticalCapitalAnswer:
+      "The Vertical Capital - это компания по инвестициям в недвижимость, предлагающая уникальную возможность владеть роскошным номером в 5-звездочном отеле в Старом Тбилиси с гарантированным доходом от аренды.",
+    whoManagesHotel: "Кто управляет отелем и инвестициями?",
+    whoManagesHotelAnswer:
+      "Отель управляется по международным стандартам гостеприимства, обеспечивая беспроблемное владение для инвесторов.",
+    benefitsOfInvesting: "Каковы преимущества инвестирования в гостиничный номер?",
+    benefitsOfInvestingAnswer:
+      "• Гарантированная доходность 10% в год (15 000$ на инвестицию в 150 000$) • Фиксированные ежемесячные платежи, обеспеченные ведущим грузинским банком • Опция обратного выкупа через 5 лет • Отсутствие операционного участия, налогов или дополнительных сборов",
+    investmentCost: "Сколько стоит инвестиция?",
+    investmentCostAnswer: "Каждый гостиничный номер стоит $150,000, с гарантированной годовой доходностью 10%.",
+    howToReceiveReturns: "Как я получаю свой доход?",
+    howToReceiveReturnsAnswer: "Инвесторы получают фиксированные ежемесячные платежи непосредственно от доходов отеля.",
+    isInvestmentSecured: "Защищены ли мои инвестиции?",
+    isInvestmentSecuredAnswer:
+      "Да, платежи гарантированы крупнейшим банком Грузии, и инвесторы имеют законное право собственности.",
+    canSellBeforeFiveYears: "Могу ли я продать свою инвестицию до истечения 5 лет?",
+    canSellBeforeFiveYearsAnswer:
+      "Да, вы можете перепродать свой гостиничный номер в любое время или воспользоваться опцией обратного выкупа через 5 лет.",
+    legalOwnershipQuestion: "Буду ли я законным владельцем гостиничного номера?",
+    legalOwnershipAnswer:
+      "Да, после инвестирования вы получите свидетельство о собственности, зарегистрированное в Министерстве юстиции Грузии.",
+    taxesAndFees: "Нужно ли мне платить налоги или сборы?",
+    taxesAndFeesAnswer:
+      "Нет, инвесторы освобождены от операционных сборов, затрат на обслуживание и налогов на недвижимость.",
+    afterFiveYears: "Что происходит через 5 лет?",
+    afterFiveYearsAnswer:
+      "• Вы можете продолжать получать доход от аренды • Продать свой гостиничный номер новому инвестору • Использовать опцию обратного выкупа, чтобы вернуть свои инвестиции",
+    howToBook: "Как забронировать инвестицию в гостиничный номер?",
+    howToBookAnswer:
+      "• Чтобы зарезервировать номер, пожалуйста, свяжитесь с нами: • 📩 Email: geoinvests.com@gmail.com • 📞 Телефон: +995 599 236 464",
+    canVisitBeforeInvesting: "Могу ли я посетить отель перед инвестированием?",
+    canVisitBeforeInvestingAnswer: "Да! Мы приглашаем инвесторов посетить объект в Старом Тбилиси.",
+
     // Footer
     email: "geoinvests.com@gmail.com",
     phone: "+995 599236464",
@@ -270,6 +364,38 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     investmentFinancials: "الاستثمار والأمور المالية",
     legalOwnership: "الملكية القانونية",
     bookingContact: "الحجز والاتصال",
+
+    // FAQ Questions & Answers
+    whatIsVerticalCapital: "ما هو The Vertical Capital؟",
+    whatIsVerticalCapitalAnswer:
+      "The Vertical Capital هي شركة استثمار عقاري تقدم فرصة فريدة لامتلاك غرفة فندقية فاخرة في فندق 5 نجوم في تبليسي القديمة، مع دخل إيجار مضمون.",
+    whoManagesHotel: "من يدير الفندق والاستثمار؟",
+    whoManagesHotelAnswer: "تتم إدارة الفندق وفقًا لمعايير الضيافة الدولية، مما يضمن ملكية خالية من المتاعب للمستثمرين.",
+    benefitsOfInvesting: "ما هي فوائد الاستثمار في غرفة فندقية؟",
+    benefitsOfInvestingAnswer:
+      "• عائد استثمار مضمون بنسبة 10% سنويًا (15,000 دولار على استثمار بقيمة 150,000 دولار) • مدفوعات شهرية ثابتة مضمونة من قبل بنك جورجي رائد • خيار إعادة الشراء بعد 5 سنوات • لا مشاركة تشغيلية، ولا ضرائب، ولا رسوم إضافية",
+    investmentCost: "كم تكلفة الاستثمار؟",
+    investmentCostAnswer: "تكلفة كل غرفة فندقية 150,000 دولار، مع عائد استثمار سنوي مضمون بنسبة 10%.",
+    howToReceiveReturns: "كيف أتلقى عوائدي؟",
+    howToReceiveReturnsAnswer: "يتلقى المستثمرون مدفوعات شهرية ثابتة مباشرة من أرباح الفندق.",
+    isInvestmentSecured: "هل استثماري آمن؟",
+    isInvestmentSecuredAnswer:
+      "نعم، المدفوعات مضمونة من قبل أكبر بنك في جورجيا، ويتمتع المستثمرون بملكية قانونية للعقار.",
+    canSellBeforeFiveYears: "هل يمكنني بيع استثماري قبل 5 سنوات؟",
+    canSellBeforeFiveYearsAnswer:
+      "نعم، يمكنك إعادة بيع غرفتك الفندقية في أي وقت، أو استخدام خيار إعادة الشراء بعد 5 سنوات.",
+    legalOwnershipQuestion: "هل سأمتلك الغرفة الفندقية قانونيًا؟",
+    legalOwnershipAnswer: "نعم، بعد الاستثمار، ستحصل على شهادة ملكية مسجلة لدى وزارة العدل في جورجيا.",
+    taxesAndFees: "هل أحتاج إلى دفع أي ضرائب أو رسوم؟",
+    taxesAndFeesAnswer: "لا، المستثمرون معفون من رسوم التشغيل وتكاليف الصيانة وضرائب الملكية.",
+    afterFiveYears: "ماذا يحدث بعد 5 سنوات؟",
+    afterFiveYearsAnswer:
+      "• يمكنك الاستمرار في تلقي دخل الإيجار • بيع غرفتك الفندقية لمستثمر جديد • استخدام خيار إعادة الشراء لاسترداد استثمارك",
+    howToBook: "كيف يمكنني حجز استثمار غرفة فندقية؟",
+    howToBookAnswer:
+      "• لحجز وحدة، يرجى الاتصال بنا: • 📩 البريد الإلكتروني: geoinvests.com@gmail.com • 📞 الهاتف: +995 599 236 464",
+    canVisitBeforeInvesting: "هل يمكنني زيارة الفندق قبل الاستثمار؟",
+    canVisitBeforeInvestingAnswer: "نعم! نرحب بالمستثمرين لزيارة العقار في تبليسي القديمة.",
 
     // Footer
     email: "geoinvests.com@gmail.com",
@@ -341,6 +467,41 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     investmentFinancials: "ინვესტიცია და ფინანსები",
     legalOwnership: "იურიდიული საკითხები და საკუთრება",
     bookingContact: "დაჯავშნა და კონტაქტი",
+
+    // FAQ Questions & Answers
+    whatIsVerticalCapital: "რა არის The Vertical Capital?",
+    whatIsVerticalCapitalAnswer:
+      "The Vertical Capital არის უძრავი ქონების საინვესტიციო კომპანია, რომელიც გთავაზობთ უნიკალურ შესაძლებლობას, ფლობდეთ ლუქს სასტუმროს ოთახს 5-ვარსკვლავიან სასტუმროში ძველ თბილისში, გარანტირებული საიჯარო შემოსავლით.",
+    whoManagesHotel: "ვინ მართავს სასტუმროს და ინვესტიციას?",
+    whoManagesHotelAnswer:
+      "სასტუმრო იმართება საერთაშორისო სტუმართმოყვარეობის სტანდარტებით, რაც უზრუნველყოფს უპრობლემო მფლობელობას ინვესტორებისთვის.",
+    benefitsOfInvesting: "რა სარგებელი აქვს სასტუმროს ოთახში ინვესტირებას?",
+    benefitsOfInvestingAnswer:
+      "• გარანტირებული 10% ROI წელიწადში (15,000$ ინვესტიციაზე 150,000$) • ფიქსირებული ყოველთვიური გადახდები, უზრუნველყოფილი წამყვანი ქართული ბანკის მიერ • გამოსყიდვის ვარიანტი 5 წლის შემდეგ • არანაირი საოპერაციო ჩართულობა, გადასახადები ან დამატებითი მოსაკრებლები",
+    investmentCost: "რა ღირს ინვესტიცია?",
+    investmentCostAnswer: "თითოეული სასტუმროს ოთახი ღირს $150,000, გარანტირებული 10% წლიური ROI-ით.",
+    howToReceiveReturns: "როგორ მივიღებ ჩემს შემოსავალს?",
+    howToReceiveReturnsAnswer: "ინვესტორები იღებენ ფიქსირებულ ყოველთვიურ გადახდებს პირდაპირ სასტუმროს შემოსავლებიდან.",
+    isInvestmentSecured: "არის თუ არა ჩემი ინვესტიცია დაცული?",
+    isInvestmentSecuredAnswer:
+      "დიახ, გადახდები გარანტირებულია საქართველოს უდიდესი ბანკის მიერ და ინვესტორებს აქვთ ქონების კანონიერი მფლობელობა.",
+    canSellBeforeFiveYears: "შემიძლია თუ არა ჩემი ინვესტიციის გაყიდვა 5 წლამდე?",
+    canSellBeforeFiveYearsAnswer:
+      "დიახ, შეგიძლიათ თქვენი სასტუმროს ოთახის გადაყიდვა ნებისმიერ დროს, ან გამოიყენოთ გამოსყიდვის ვარიანტი 5 წლის შემდეგ.",
+    legalOwnershipQuestion: "ვიქნები თუ არა სასტუმროს ოთახის კანონიერი მფლობელი?",
+    legalOwnershipAnswer:
+      "დიახ, ინვესტირების შემდეგ მიიღებთ საკუთრების სერტიფიკატს, რომელიც რეგისტრირებულია საქართველოს იუსტიციის სამინისტროში.",
+    taxesAndFees: "მჭირდება თუ არა რაიმე გადასახადების ან მოსაკრებლების გადახდა?",
+    taxesAndFeesAnswer:
+      "არა, ინვესტორები გათავისუფლებულნი არიან საოპერაციო მოსაკრებლებისგან, ტექნიკური მომსახურების ხარჯებისგან და ქონების გადასახადებისგან.",
+    afterFiveYears: "რა ხდება 5 წლის შემდეგ?",
+    afterFiveYearsAnswer:
+      "• შეგიძლიათ განაგრძოთ საიჯარო შემოსავლის მიღება • გაყიდოთ თქვენი სასტუმროს ოთახი ახალ ინვესტორზე • გამოიყენოთ გამოსყიდვის ვარიანტი თქვენი ინვესტიციის დასაბრუნებლად",
+    howToBook: "როგორ შემიძლია სასტუმროს ოთახის ინვესტიციის დაჯავშნა?",
+    howToBookAnswer:
+      "• ერთეულის დასაჯავშნად, გთხოვთ დაგვიკავშირდეთ: • 📩 ელფოსტა: geoinvests.com@gmail.com • 📞 ტელეფონი: +995 599 236 464",
+    canVisitBeforeInvesting: "შემიძლია თუ არა სასტუმროს მონახულება ინვესტირებამდე?",
+    canVisitBeforeInvestingAnswer: "დიახ! ჩვენ მოვიწვევთ ინვესტორებს ქონების მოსანახულებლად ძველ თბილისში.",
 
     // Footer
     email: "geoinvests.com@gmail.com",
